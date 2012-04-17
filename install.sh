@@ -89,5 +89,9 @@ echo "Configuring Vim"
   cp -R .vim ~/
   cp .vimrc ~/
 
+echo "Cleaning up"
+  cd ~
+  rm -rf ~/dotfiles
+
 echo "Reloading the shell"
   exec $SHELL
