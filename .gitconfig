@@ -1,0 +1,22 @@
+[user]
+  name = Luca Guidi
+  email = me@lucaguidi.com
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[core]
+  editor = vim
+[merge]
+  tool = opendiff
+[push]
+  branch = current
+[pull]
+  branch = current
+[github]
+  user = jodosha
+[format]
+  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+[mergetool]
+  keepBackup = true
