@@ -1,0 +1,39 @@
+[submodule ".vim/bundle/ack.vim"]
+	path = .vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/taglist.vim"]
+	path = .vim/bundle/taglist.vim
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule ".vim/bundle/coffee-script"]
+	path = .vim/bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule ".vim/bundle/commentary"]
+	path = .vim/bundle/commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/endwise"]
+	path = .vim/bundle/endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule ".vim/bundle/haml"]
+	path = .vim/bundle/haml
+	url = https://github.com/chriseppstein/vim-haml.git
+[submodule ".vim/bundle/jade"]
+	path = .vim/bundle/jade
+	url = https://github.com/digitaltoad/vim-jade.git
+[submodule ".vim/bundle/javascript"]
+	path = .vim/bundle/javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule ".vim/bundle/rails"]
+	path = .vim/bundle/rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule ".vim/bundle/ruby"]
+	path = .vim/bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule ".vim/bundle/supertab"]
+	path = .vim/bundle/supertab
+	url = https://github.com/tsaleh/vim-supertab.git
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
