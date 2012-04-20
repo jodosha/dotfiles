@@ -40,3 +40,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".vim/bundle/bundler"]
+	path = .vim/bundle/bundler
+	url = https://github.com/tpope/vim-bundler.git
