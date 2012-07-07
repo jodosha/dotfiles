@@ -28,6 +28,7 @@ echo "Installing Vim"
 
 echo "Installing PostgreSQL"
   brew install postgres --no-python
+  initdb /usr/local/var/postgres
 
 echo "Installing Redis"
   brew install redis
