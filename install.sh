@@ -45,7 +45,7 @@ echo "Installing Rbenv"
   brew install ruby-build
 
 echo "Installing Ruby"
-  rbenv install 1.9.3-p125
+  rbenv install 1.9.3-p194
   gem install bundler --no-rdoc --no-ri
   gem install rails   --no-rdoc --no-ri
   gem install heroku  --no-rdoc --no-ri
