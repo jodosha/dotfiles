@@ -46,18 +46,23 @@ echo "Installing Rbenv"
 
 echo "Installing Ruby"
   rbenv install 1.9.3-p194
+  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+  rbenv shell 1.9.3-p194
+  rbenv rehash
+
+echo "** Installing basic gems"
   gem install bundler --no-rdoc --no-ri
   gem install rails   --no-rdoc --no-ri
   gem install heroku  --no-rdoc --no-ri
 
 echo "** Configuring RubyGems.org account"
-  mkdir ~/.gem
+  mkdir -p ~/.gem
   curl -u jodosha https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
 
   rbenv rehash
 
 echo "** Configuring Heroku account"
-  heroku account:login
+  heroku auth:login
 
 echo "Cloning dotfiles repo"
   rm -rf ~/.dotfiles
