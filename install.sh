@@ -97,7 +97,7 @@ echo "Configuring Vim"
 
 echo "Cleaning up"
   cd ~
-  rm -rf ~/dotfiles
+  rm -rf ~/.dotfiles
 
 echo "Reloading the shell"
   exec $SHELL
