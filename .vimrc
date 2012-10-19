@@ -52,6 +52,7 @@ endif
 " ctags
 " map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `gem environment gemdir`/gems/*<CR><CR>
 map <silent> <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
+nmap <F8> :TagbarToggle<CR>
 
 " Remove highlight after search
 nmap <silent> <C-N> :silent noh<CR>
