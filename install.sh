@@ -1,5 +1,13 @@
 #!/bin/sh
 
+set -e
+DOTFILES_ROOT="$HOME/.dotfiles"
+cd "$HOME"
+
+ln_s () {
+  ln -sfn "$DOTFILES_ROOT/$1" "$2"
+}
+
 echo "Checking for SSH key, generating one if it doesn't exist"
   [[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
 
@@ -67,37 +75,33 @@ echo "** Configuring Heroku account"
 echo "Cloning dotfiles repo"
   rm -rf ~/.dotfiles
   git clone --recursive https://github.com/jodosha/dotfiles.git ~/.dotfiles
-  cd ~/.dotfiles
 
 echo "Configuring Oh-My-ZSH"
-  cp -R .oh-my-zsh ~/.oh-my-zsh
-  cp jodosha.zsh-theme ~/.oh-my-zsh/themes
-  cp .zshrc ~/
+  ln_s .oh-my-zsh .oh-my-zsh
+  ln_s jodosha.zsh-theme .oh-my-zsh/themes
+  ln_s .zshrc .
   chsh -s /bin/zsh
 
 echo "Configuring Tmux"
-  cp .tmux.conf ~/
+  ln_s .tmux.conf .
 
 echo "Configuring Git"
-  cp -R .gitconfig ~/
+  ln_s .gitconfig .
 
 echo "Installing user defined scripts"
-  cp -R bin ~/
+  mkdir -p ~/bin
+  ls bin | while read script; do ln_s "bin/$script" bin; done
 
-echo "Installing fonts"
-  ls fonts | while read font; do open $font; done
+# echo "Installing fonts"
+#   ls fonts | while read font; do open $font; done
 
-echo "Configuring iTerm2"
-  open iTerm/Tomorrow\ Night.itermcolors
-  cp iTerm/com.googlecode.iterm2.plist ~/Library/Preferences
+# echo "Configuring iTerm2"
+#   open iTerm/Tomorrow\ Night.itermcolors
+#   cp iTerm/com.googlecode.iterm2.plist ~/Library/Preferences
 
 echo "Configuring Vim"
-  cp -R .vim ~/
-  cp .vimrc ~/
-
-echo "Cleaning up"
-  cd ~
-  rm -rf ~/.dotfiles
+  ln_s .vim .
+  ln_s .vimrc .
 
 echo "Reloading the shell"
   exec $SHELL
