@@ -1,0 +1,19 @@
+#!/bin/bash
+
+name=$1
+dir="$HOME/Code/$name"
+cd $dir
+
+# "$HOME/.tmux/services/$1"
+
+if ! tmux has-session -t $name ; then
+  tmux start                                 \;\
+    new-session -d -s $name exit             \;\
+    set default-path $dir                    \;\
+    set set-remain-on-exit on                \;\
+    source-file "$HOME/.tmux.conf"           \;\
+    source-file "$HOME/.tmux/profiles/$name" \;\
+    set set-remain-on-exit off
+fi
+
+tmux attach -t $name
