@@ -29,9 +29,9 @@ plugins=(git git-completion git-flow brew gem npm osx rails3 redis-cli ruby rben
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export CFLAGS=s"-g -02"
-export CC=/usr/bin/gcc-4.2
+export CFLAGS="-g -02"
+export CC="/usr/bin/gcc-4.2"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
-export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin"
 export EDITOR="vim"
 eval "$(rbenv init -)"
