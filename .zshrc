@@ -30,8 +30,15 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export CFLAGS="-g -02"
-export CC="/usr/bin/gcc-4.2"
+export CC="/usr/bin/gcc"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin"
 export EDITOR="vim"
+
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=100000000
+export RUBY_HEAP_FREE_MIN=500000
+
 eval "$(rbenv init -)"
