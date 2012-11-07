@@ -65,3 +65,12 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+" Run RSpec examples. Loosely inspired by: https://gist.github.com/1062296
+function! RunSpec(args)
+  let cmd = "bundle exec rspec " . a:args . " " . @%
+  execute ":! echo " . cmd . " && " . cmd
+endfunction
+
+map <silent> <leader>r :call RunSpec("") <CR>
+map <silent> <leader>re :call RunSpec("-fn -l " . line('.')) <CR>
