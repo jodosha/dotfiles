@@ -52,3 +52,9 @@
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/vim-turbux"]
+	path = .vim/bundle/vim-turbux
+	url = https://github.com/jgdavey/vim-turbux.git
+[submodule ".vim/bundle/tslime.vim"]
+	path = .vim/bundle/tslime.vim
+	url = https://github.com/jgdavey/tslime.vim.git

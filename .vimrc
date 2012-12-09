@@ -11,14 +11,14 @@ call pathogen#infect()
 filetype plugin indent on
 
 " History, Cursor, Rulers
-set history=50    " Just remember last 50 commands
-set laststatus=2  " Always display the status line
-set ruler         " Show the cursor position all the time
-set number        " Show line numbers
-set showcmd       " Display incomplete commands
-set cursorline    " Highlight current cursor line
-set showcmd       " Display incomplete commands
-set shell=zsh     " Default shell is ZSH
+set history=50               " Just remember last 50 commands
+set laststatus=2             " Always display the status line
+set ruler                    " Show the cursor position all the time
+set number                   " Show line numbers
+set showcmd                  " Display incomplete commands
+set cursorline               " Highlight current cursor line
+set showcmd                  " Display incomplete commands
+set shell=/usr/local/bin/zsh " Default shell is ZSH
 
 " Tabs and white spaces
 set nowrap                        " Don't wrap lines
@@ -49,6 +49,9 @@ if has('gui_running')
   set transparency=5         " A bit of transparency
 endif
 
+" Ruby
+let g:ruby_path = '/usr/local/opt/rbenv/shims'
+
 " ctags
 " map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `gem environment gemdir`/gems/*<CR><CR>
 map <silent> <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
@@ -65,6 +68,8 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+let g:turbux_command_prefix = 'bundle exec' "
 
 " Run RSpec examples. Loosely inspired by: https://gist.github.com/1062296
 function! RunSpec(args)
