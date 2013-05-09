@@ -19,9 +19,6 @@
 [submodule ".vim/bundle/haml"]
 	path = .vim/bundle/haml
 	url = https://github.com/chriseppstein/vim-haml.git
-[submodule ".vim/bundle/jade"]
-	path = .vim/bundle/jade
-	url = https://github.com/digitaltoad/vim-jade.git
 [submodule ".vim/bundle/javascript"]
 	path = .vim/bundle/javascript
 	url = https://github.com/pangloss/vim-javascript.git
