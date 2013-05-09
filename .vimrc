@@ -17,7 +17,6 @@ set ruler                    " Show the cursor position all the time
 set number                   " Show line numbers
 set showcmd                  " Display incomplete commands
 set cursorline               " Highlight current cursor line
-set showcmd                  " Display incomplete commands
 set shell=/usr/local/bin/zsh " Default shell is ZSH
 
 " Tabs and white spaces
