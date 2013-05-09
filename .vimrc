@@ -49,6 +49,12 @@ if has('gui_running')
   set transparency=5         " A bit of transparency
 endif
 
+" Splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Ruby
 let g:ruby_path = '/usr/local/opt/rbenv/shims'
 
