@@ -53,9 +53,9 @@ echo "Installing Rbenv"
   brew install ruby-build
 
 echo "Installing Ruby"
-  rbenv install 1.9.3-p194
+  rbenv install 2.0.0-p0
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-  rbenv shell 1.9.3-p194
+  rbenv shell 2.0.0-p0
   rbenv rehash
 
 echo "** Installing basic gems"
