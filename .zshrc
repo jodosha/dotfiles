@@ -29,6 +29,8 @@ plugins=(git git-completion git-flow brew gem npm osx rails3 redis-cli ruby rben
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+source $HOME/.dotfiles/aliases.sh
+
 export CFLAGS="-g -02"
 export CC="/usr/bin/gcc"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
