@@ -59,9 +59,10 @@ echo "Installing Ruby"
   rbenv rehash
 
 echo "** Installing basic gems"
-  gem install bundler --no-rdoc --no-ri
-  gem install rails   --no-rdoc --no-ri
-  gem install heroku  --no-rdoc --no-ri
+  echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
+  gem install bundler
+  gem install rails
+  gem install heroku
 
 echo "** Configuring RubyGems.org account"
   mkdir -p ~/.gem
