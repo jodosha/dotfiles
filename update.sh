@@ -11,6 +11,7 @@ echo "Fetching changes from remote repository"
   git pull origin master
 
 echo "Fetching changes from submodules"
+  git submodule init
   git submodule update
 
 echo "Updating user defined scripts"
