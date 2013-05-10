@@ -34,6 +34,7 @@ source $HOME/.dotfiles/aliases.sh
 export CFLAGS="-g -02"
 export CC="/usr/bin/gcc"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+export RBENV_ROOT="$HOME/.rbenv"
 export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin"
 export EDITOR="vim"
 
