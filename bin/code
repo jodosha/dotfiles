@@ -10,7 +10,7 @@ if ! tmux has-session -t $name ; then
   tmux start                                 \;\
     new-session -d -s $name exit             \;\
     set default-path $dir                    \;\
-    set set-remain-on-exit on                \;\
+    set set-remain-on-exit off               \;\
     source-file "$HOME/.tmux.conf"           \;\
     source-file "$HOME/.tmux/profiles/$name" \;\
     set set-remain-on-exit off
