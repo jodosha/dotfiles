@@ -5,8 +5,10 @@ alias gs='git status'
 alias gaa='git add .'
 alias gc='git commit'
 alias gca='git commit --amend --date="$(date)"'
+alias wip='gaa && gca -m "WIP"'
 alias gsh='git show HEAD'
 alias gd='git diff'
+alias grev='git diff master'
 alias gsu='git submodule foreach git pull origin master'
 
 # Misc
