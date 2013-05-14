@@ -19,6 +19,9 @@ echo "Installing Homebrew"
   /usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
   brew update
 
+echo "Installing OpenSSL"
+  brew install openssl
+
 echo "Installing Git"
   brew install git
   brew install git-flow
@@ -53,9 +56,10 @@ echo "Installing Rbenv"
   brew install ruby-build
 
 echo "Installing Ruby"
-  rbenv install 2.0.0-p0
+  export RUBY_CONFIGURE_OPTS="--enable-dtrace --with-opt-dir=`brew --prefix openssl`"
+  rbenv install 2.0.0-p195
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-  rbenv shell 2.0.0-p0
+  rbenv global 2.0.0-p195
   rbenv rehash
 
 echo "** Installing basic gems"
