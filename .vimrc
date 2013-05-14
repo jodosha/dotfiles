@@ -68,6 +68,9 @@ nmap <silent> <C-N> :silent noh<CR>
 " Quick switch between numbers ruler
 noremap <silent> <F12> :set number!<CR>
 
+" Open my sharpening tools list (Thanks to Ben Orenstein)
+map <Leader>sha :sp ~/Documents/Work/sharp.txt<CR>
+
 " Force using hjkl, not arrows
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
