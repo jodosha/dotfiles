@@ -10,13 +10,12 @@ ln_s () {
 echo "Fetching changes from remote repository"
   git pull origin master
 
-echo "Fetching changes from submodules"
-  git submodule init
-  git submodule update
-
 echo "Updating user defined scripts"
   rm ~/bin/*
   ls bin | while read script; do ln_s "bin/$script" ~/bin; done
 
+echo "Updating Vim plugins"
+  upgrade_vim
+
 echo "Reloading the shell"
-  exec $SHELL
+  exec $SHELL -l
