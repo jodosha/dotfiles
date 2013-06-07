@@ -92,6 +92,7 @@ echo "Configuring Tmux"
 
 echo "Configuring Git"
   ln_s .gitconfig .
+  ln_s gitignore .gitignore
 
 echo "Installing user defined scripts"
   mkdir -p ~/bin
