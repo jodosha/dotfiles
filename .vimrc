@@ -11,13 +11,14 @@ call pathogen#infect()
 filetype plugin indent on
 
 " History, Cursor, Rulers
-set history=50               " Just remember last 50 commands
-set laststatus=2             " Always display the status line
-set ruler                    " Show the cursor position all the time
-set number                   " Show line numbers
-set showcmd                  " Display incomplete commands
-set cursorline               " Highlight current cursor line
-set shell=/usr/local/bin/zsh " Default shell is ZSH
+set history=50                                                               " Just remember last 50 commands
+set laststatus=2                                                             " Always display the status line
+set ruler                                                                    " Show the cursor position all the time
+set number                                                                   " Show line numbers
+set showcmd                                                                  " Display incomplete commands
+set cursorline                                                               " Highlight current cursor line
+set shell=/usr/local/bin/zsh                                                 " Default shell is ZSH
+set statusline=%<%f\ %h%m%r%=\ %{devnotes#statusline()}\ %-14.(%l,%c%V%)\ %P " Status line format
 
 " Tabs and white spaces
 set nowrap                        " Don't wrap lines
@@ -77,7 +78,7 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-let g:turbux_command_prefix = 'zeus' "
+let g:turbux_command_prefix = 'greenbar zeus' "
 
 " Run RSpec examples. Loosely inspired by: https://gist.github.com/1062296
 function! RunSpec(args)
@@ -87,3 +88,12 @@ endfunction
 
 map <silent> <leader>r :call RunSpec("") <CR>
 map <silent> <leader>re :call RunSpec("-fn -l " . line('.')) <CR>
+
+" Greenbar
+function! RunGreenbarTest(file)
+  return SendTestToTmux(a:file)
+endfunction
+
+function! RunGreenbarFocusedTest(file, line)
+  return SendFocusedTestToTmux(a:file, a:line)
+endfunction
