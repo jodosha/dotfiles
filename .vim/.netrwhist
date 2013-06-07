@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/luca/Code/litmus/spec/tasks/billing'
-let g:netrw_dirhist_2='/Users/luca/Code/litmus/spec/tasks'
-let g:netrw_dirhist_3='/Users/luca/Code/litmus/spec'
-let g:netrw_dirhist_4='/Users/luca/Code/litmus'
-let g:netrw_dirhist_5='/Users/luca/Code/litmus/spec/integration'
-let g:netrw_dirhist_6='/Users/luca/Code/litmus/db/migrate'
-let g:netrw_dirhist_7='/Users/luca/Code/litmus'
