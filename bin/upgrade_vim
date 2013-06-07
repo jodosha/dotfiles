@@ -10,8 +10,10 @@ do
   path="$base/$name"
 
   if [ -d $path ]; then
-    $(cd $path && git pull)
+    echo "Updating $name"
+    cd $path && git pull
   else
+    echo "Installing $name"
     git clone $git $path
   fi
 done < $plugins
