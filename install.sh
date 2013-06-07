@@ -79,10 +79,10 @@ echo "** Configuring Heroku account"
 
 echo "Cloning dotfiles repo"
   rm -rf ~/.dotfiles
-  git clone --recursive https://github.com/jodosha/dotfiles.git ~/.dotfiles
+  git clone git@github.com:jodosha/dotfiles.git ~/.dotfiles
 
-echo "Configuring Oh-My-ZSH"
-  ln_s .oh-my-zsh .oh-my-zsh
+echo "Installing Oh-My-ZSH"
+  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   ln_s jodosha.zsh-theme .oh-my-zsh/themes
   ln_s .zshrc .
   chsh -s /bin/zsh
@@ -108,5 +108,8 @@ echo "Configuring Vim"
   ln_s .vim .
   ln_s .vimrc .
 
+echo "** Installing Vim plugins"
+  upgrade_vim
+
 echo "Reloading the shell"
-  exec $SHELL
+  exec $SHELL -l

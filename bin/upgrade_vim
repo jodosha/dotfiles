@@ -1,0 +1,17 @@
+#!/bin/bash
+vimhome=$HOME/.vim
+plugins=$vimhome/.plugins
+base=$vimhome/bundle
+
+mkdir -p $base
+
+while read name git
+do
+  path="$base/$name"
+
+  if [ -d $path ]; then
+    $(cd $path && git pull)
+  else
+    git clone $git $path
+  fi
+done < $plugins
