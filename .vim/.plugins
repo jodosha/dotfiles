@@ -16,4 +16,5 @@ taglist.vim   https://github.com/vim-scripts/taglist.vim.git
 tslime.vim    https://github.com/jgdavey/tslime.vim.git
 vim-devnotes  git@github.com:jodosha/vim-devnotes.git
 vim-dispatch  https://github.com/tpope/vim-dispatch.git
+vim-greenbar  git@github.com:jodosha/vim-greenbar.git
 vim-turbux    https://github.com/jgdavey/vim-turbux.git
