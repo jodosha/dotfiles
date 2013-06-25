@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+CODE=$( cat <<EOS
+#!/usr/bin/env ruby
+require 'benchmark'
+
+TIMES = ENV['TIMES'] || 100_000
+
+Benchmark.bm(30) do |bm|
+  bm.report '' do
+    TIMES.times do
+    end
+  end
+
+  bm.report '' do
+    TIMES.times do
+    end
+  end
+end
+EOS)
+
+echo "$CODE" > $1
+chmod +x $1
