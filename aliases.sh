@@ -2,7 +2,7 @@
 alias gp!='git push origin $(current_branch)'
 alias gcb='git push -u origin $(current_branch)'
 alias gs='git status'
-alias gaa='git add .'
+alias gaa='git add --all'
 alias gc='git commit'
 alias gca='git commit --amend --date="$(date)"'
 alias wip='gaa && gca -m "WIP"'
