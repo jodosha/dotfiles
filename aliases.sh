@@ -12,4 +12,4 @@ alias grev='git diff master'
 alias gsu='git submodule foreach git pull origin master'
 
 # Misc
-alias retag='bundle list --paths=true | xargs ctags --extra=+f --exclude=.git --exclude=log -R *'
+alias retag='bundle list --paths=true | xargs ctags --extra=+f --exclude=.git --exclude=log --languages=-javascript -R *'
