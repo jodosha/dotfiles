@@ -1,0 +1,10 @@
+#!/bin/bash
+version=$(cat $HOME/.dotfiles/.rbenv-version)
+
+brew update && brew remove --force ruby-build && brew install --HEAD ruby-build
+
+export RUBY_CONFIGURE_OPTS="--enable-dtrace --with-opt-dir=`brew --prefix openssl`"
+rbenv install $version
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+rbenv global $version
+rbenv rehash

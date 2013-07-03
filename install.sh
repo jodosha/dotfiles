@@ -53,29 +53,6 @@ echo "Installing Node"
 
 echo "Installing Rbenv"
   brew install rbenv
-  brew install ruby-build
-
-echo "Installing Ruby"
-  export RUBY_CONFIGURE_OPTS="--enable-dtrace --with-opt-dir=`brew --prefix openssl`"
-  rbenv install 2.0.0-p195
-  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-  rbenv global 2.0.0-p195
-  rbenv rehash
-
-echo "** Installing basic gems"
-  echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
-  gem install bundler
-  gem install rails
-  gem install heroku
-
-echo "** Configuring RubyGems.org account"
-  mkdir -p ~/.gem
-  curl -u jodosha https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
-
-  rbenv rehash
-
-echo "** Configuring Heroku account"
-  heroku auth:login
 
 echo "Cloning dotfiles repo"
   rm -rf ~/.dotfiles
@@ -111,6 +88,24 @@ echo "Configuring Vim"
 
 echo "** Installing Vim plugins"
   upgrade_vim
+
+echo "Installing Ruby"
+  install_ruby
+
+echo "** Installing basic gems"
+  echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
+  gem install bundler
+  gem install rails
+  gem install heroku
+
+echo "** Configuring RubyGems.org account"
+  mkdir -p ~/.gem
+  curl -u jodosha https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
+
+  rbenv rehash
+
+echo "** Configuring Heroku account"
+  heroku auth:login
 
 echo "Reloading the shell"
   exec $SHELL -l
