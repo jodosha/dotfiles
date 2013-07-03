@@ -12,7 +12,6 @@ supertab      https://github.com/tsaleh/vim-supertab.git
 surround      https://github.com/tpope/vim-surround.git
 syntastic     https://github.com/scrooloose/syntastic.git
 tagbar        https://github.com/majutsushi/tagbar.git
-taglist.vim   https://github.com/vim-scripts/taglist.vim.git
 tslime.vim    https://github.com/jgdavey/tslime.vim.git
 vim-devnotes  git@github.com:jodosha/vim-devnotes.git
 vim-dispatch  https://github.com/tpope/vim-dispatch.git
