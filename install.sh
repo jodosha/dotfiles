@@ -92,12 +92,6 @@ echo "** Installing Vim plugins"
 echo "Installing Ruby"
   install_ruby
 
-echo "** Installing basic gems"
-  echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
-  gem install bundler
-  gem install rails
-  gem install heroku
-
 echo "** Configuring RubyGems.org account"
   mkdir -p ~/.gem
   curl -u jodosha https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
