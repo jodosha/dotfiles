@@ -55,6 +55,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Buffers
+map <leader>bd :bufdo bdelete<cr>
+
 " Ruby
 let g:ruby_path = '/usr/local/opt/rbenv/shims'
 
