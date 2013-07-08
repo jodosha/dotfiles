@@ -11,6 +11,7 @@ ruby          https://github.com/vim-ruby/vim-ruby.git
 supertab      https://github.com/tsaleh/vim-supertab.git
 surround      https://github.com/tpope/vim-surround.git
 syntastic     https://github.com/scrooloose/syntastic.git
+tabular       https://github.com/godlygeek/tabular.git
 tagbar        https://github.com/majutsushi/tagbar.git
 tslime.vim    https://github.com/jgdavey/tslime.vim.git
 vim-devnotes  git@github.com:jodosha/vim-devnotes.git
