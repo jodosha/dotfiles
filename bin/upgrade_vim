@@ -2,6 +2,7 @@
 vimhome=$HOME/.vim
 plugins=$vimhome/.plugins
 base=$vimhome/bundle
+golang=/usr/local/go
 
 mkdir -p $base
 
@@ -17,3 +18,6 @@ do
     git clone $git $path
   fi
 done < $plugins
+
+mkdir -p $vimhome/syntax
+cp $golang/misc/vim/syntax/go.vim $vimhome/syntax
