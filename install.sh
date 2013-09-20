@@ -28,6 +28,7 @@ echo "Installing Git"
 
 echo "Installing Ack"
   brew install ack
+  ln_s .ackrc .
 
 echo "Installing Tmux"
   brew install tmux

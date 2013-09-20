@@ -1,0 +1,16 @@
+# Always sort the files
+#--sort−files
+
+# Always color, even if piping to a another program
+--color
+
+# Use "less −r" as my pager
+# --pager
+# less -r
+
+--ignore-dir=log/
+--ignore-dir=tmp/
+--type-add=css=scss
+--type-add=ruby=.haml,.erb,.feature,.ru,.lock
+--type-set=coffeescript=.coffee
+--type-set=coffee=.coffee
