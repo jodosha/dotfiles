@@ -20,3 +20,5 @@
   pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
 [mergetool]
   keepBackup = true
+[heroku]
+	account = personal
