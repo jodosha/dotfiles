@@ -30,6 +30,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 source $HOME/.dotfiles/aliases.sh
+source $HOME/Dropbox/aliases.sh
 
 export CFLAGS="-g -02"
 export CC="/usr/local/bin/gcc-4.2"
