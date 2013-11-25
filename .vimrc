@@ -111,3 +111,11 @@ endfunction
 function! RunGreenbarFocusedTest(file, line)
   return SendFocusedTestToTmux(a:file, a:line)
 endfunction
+
+let g:tmuxline_powerline_separators = 1
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'z'    : '#H'}
