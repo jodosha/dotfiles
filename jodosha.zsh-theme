@@ -18,4 +18,5 @@ git_custom_status() {
   fi
 }
 
+THUNDER=$'\e[31;1m⚡\e[0m'
 PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B%%%b '
