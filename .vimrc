@@ -49,6 +49,14 @@ if has('gui_running')
   set transparency=5         " A bit of transparency
 endif
 
+" highlight the 80th column
+"
+" In Vim >= 7.3, also highlight columns 120+
+if exists('+colorcolumn')
+  let &colorcolumn="80,".join(range(120,999),",")
+  highlight ColorColumn ctermbg=236
+endif
+
 " Splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
