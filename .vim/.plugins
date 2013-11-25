@@ -15,6 +15,7 @@ syntastic     https://github.com/scrooloose/syntastic.git
 tabular       https://github.com/godlygeek/tabular.git
 tagbar        https://github.com/majutsushi/tagbar.git
 tslime.vim    https://github.com/jgdavey/tslime.vim.git
+vim-airline   https://github.com/bling/vim-airline.git
 vim-devnotes  git@github.com:jodosha/vim-devnotes.git
 vim-dispatch  https://github.com/tpope/vim-dispatch.git
 vim-greenbar  git@github.com:jodosha/vim-greenbar.git
