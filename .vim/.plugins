@@ -8,6 +8,7 @@ fugitive      https://github.com/tpope/vim-fugitive.git
 javascript    https://github.com/pangloss/vim-javascript.git
 rails         https://github.com/tpope/vim-rails.git
 ruby          https://github.com/vim-ruby/vim-ruby.git
+seoul256      https://github.com/junegunn/seoul256.vim.git
 supertab      https://github.com/tsaleh/vim-supertab.git
 surround      https://github.com/tpope/vim-surround.git
 syntastic     https://github.com/scrooloose/syntastic.git

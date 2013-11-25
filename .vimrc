@@ -36,7 +36,10 @@ set ignorecase  " Searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
 " Apparence
-colorscheme Tomorrow-Night   " Tomorrow Night is the theme of choice
+" colorscheme Tomorrow-Night   " Tomorrow Night is the theme of choice
+" Unified color scheme (default: dark)
+let g:seoul256_background = 235
+colo seoul256
 set guifont=Menlo\ bold:h14  " Font is Menlo
 set linespace=2
 set antialias
