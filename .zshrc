@@ -24,7 +24,7 @@ ZSH_THEME="jodosha"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-completion git-flow brew gem npm osx rails3 redis-cli ruby rbenv)
+plugins=(git git-completion git-flow brew gem npm osx rails redis-cli ruby rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
