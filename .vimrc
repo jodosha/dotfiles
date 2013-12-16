@@ -112,6 +112,7 @@ function! RunGreenbarFocusedTest(file, line)
   return SendFocusedTestToTmux(a:file, a:line)
 endfunction
 
+" Powerline
 let g:tmuxline_powerline_separators = 1
 let g:tmuxline_preset = {
       \'a'    : '#S',
@@ -119,3 +120,24 @@ let g:tmuxline_preset = {
       \'win'  : '#I #W',
       \'cwin' : '#I #W',
       \'z'    : '#H'}
+
+" The Silver Searcher
+" Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor\ --path-to-agignore\ $HOME/.agignore
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  " bind K to grep word under cursor
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+  " bind , (backward slash) to grep shortcut
+  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
+  nnoremap , :Ag<SPACE>
+endif

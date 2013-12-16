@@ -26,9 +26,9 @@ echo "Installing Git"
   brew install git
   brew install git-flow
 
-echo "Installing Ack"
-  brew install ack
-  ln_s .ackrc .
+echo "Installing The Silver Searcher"
+  brew install the_silver_searcher
+  ln_s .agignore .
 
 echo "Installing Tmux"
   brew install tmux
