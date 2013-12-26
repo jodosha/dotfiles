@@ -16,7 +16,7 @@ echo "Copying public key to clipboard. Paste it into your Github account"
   open https://github.com/account/ssh
 
 echo "Installing Homebrew"
-  /usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   brew update
 
 #echo "Installing OpenSSL"
