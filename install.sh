@@ -19,16 +19,11 @@ echo "Installing Homebrew"
   /usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
   brew update
 
-echo "Installing OpenSSL"
-  brew install openssl
+#echo "Installing OpenSSL"
+#  brew install openssl
 
 echo "Installing Git"
   brew install git
-  brew install git-flow
-
-echo "Installing The Silver Searcher"
-  brew install the_silver_searcher
-  ln_s .agignore .
 
 echo "Installing Tmux"
   brew install tmux
@@ -38,22 +33,19 @@ echo "Installing Vim"
   cd vim73 && ./configure --with-features=huge --enable-cscope --enable-rubyinterp=dynamic --enable-multibyte && make && sudo make install
   cd .. && rm -rf vim*
 
-echo "Installing PostgreSQL"
-  brew install postgres --no-python
-  initdb /usr/local/var/postgres
+#echo "Installing PostgreSQL"
+#  brew install postgres --no-python
+#  initdb /usr/local/var/postgres
 
-echo "Installing Redis"
-  brew install redis
+#echo "Installing Redis"
+#  brew install redis
 
-echo "Install MongoDB"
-  brew install mongo
+#echo "Installing Node"
+#  brew install node
+#  curl http://npmjs.org/install.sh | sh
 
-echo "Installing Node"
-  brew install node
-  curl http://npmjs.org/install.sh | sh
-
-echo "Installing Rbenv"
-  brew install rbenv
+#echo "Installing Rbenv"
+#  brew install rbenv
 
 echo "Cloning dotfiles repo"
   rm -rf ~/.dotfiles
@@ -90,17 +82,21 @@ echo "Configuring Vim"
 echo "** Installing Vim plugins"
   upgrade_vim
 
-echo "Installing Ruby"
-  install_ruby
+echo "Installing The Silver Searcher"
+  brew install the_silver_searcher
+  ln_s .agignore .
 
-echo "** Configuring RubyGems.org account"
-  mkdir -p ~/.gem
-  curl -u jodosha https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
+#echo "Installing Ruby"
+#  install_ruby
 
-  rbenv rehash
+#echo "** Configuring RubyGems.org account"
+#  mkdir -p ~/.gem
+#  curl -u jodosha https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
 
-echo "** Configuring Heroku account"
-  heroku auth:login
+#  rbenv rehash
+
+#echo "** Configuring Heroku account"
+#  heroku auth:login
 
 echo "Reloading the shell"
   exec $SHELL -l
