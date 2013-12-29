@@ -19,11 +19,16 @@ echo "Installing Homebrew"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   brew update
 
-#echo "Installing OpenSSL"
-#  brew install openssl
+echo "Installing OpenSSL"
+  brew install openssl
 
 echo "Installing Git"
   brew install git
+  brew install git-flow
+
+echo "Installing The Silver Searcher"
+  brew install the_silver_searcher
+  ln_s .agignore .
 
 echo "Installing Tmux"
   brew install tmux
@@ -33,19 +38,22 @@ echo "Installing Vim"
   cd vim73 && ./configure --with-features=huge --enable-cscope --enable-rubyinterp=dynamic --enable-multibyte && make && sudo make install
   cd .. && rm -rf vim*
 
-#echo "Installing PostgreSQL"
-#  brew install postgres --no-python
-#  initdb /usr/local/var/postgres
+echo "Installing PostgreSQL"
+  brew install postgres --no-python
+  initdb /usr/local/var/postgres
 
-#echo "Installing Redis"
-#  brew install redis
+echo "Installing Redis"
+  brew install redis
 
-#echo "Installing Node"
-#  brew install node
-#  curl http://npmjs.org/install.sh | sh
+echo "Install MongoDB"
+  brew install mongo
 
-#echo "Installing Rbenv"
-#  brew install rbenv
+echo "Installing Node"
+  brew install node
+  curl http://npmjs.org/install.sh | sh
+
+echo "Installing Rbenv"
+  brew install rbenv
 
 echo "Cloning dotfiles repo"
   rm -rf ~/.dotfiles
@@ -82,21 +90,17 @@ echo "Configuring Vim"
 echo "** Installing Vim plugins"
   upgrade_vim
 
-echo "Installing The Silver Searcher"
-  brew install the_silver_searcher
-  ln_s .agignore .
+echo "Installing Ruby"
+  install_ruby
 
-#echo "Installing Ruby"
-#  install_ruby
+echo "** Configuring RubyGems.org account"
+  mkdir -p ~/.gem
+  curl -u jodosha https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
 
-#echo "** Configuring RubyGems.org account"
-#  mkdir -p ~/.gem
-#  curl -u jodosha https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
+  rbenv rehash
 
-#  rbenv rehash
-
-#echo "** Configuring Heroku account"
-#  heroku auth:login
+echo "** Configuring Heroku account"
+  heroku auth:login
 
 echo "Reloading the shell"
   exec $SHELL -l
