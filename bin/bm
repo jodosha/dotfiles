@@ -17,7 +17,11 @@ Benchmark.bm(30) do |bm|
     end
   end
 end
+
+__END__
 EOS)
 
 echo "$CODE" > $1
 chmod +x $1
+
+system_profiler SPHardwareDataType SPSoftwareDataType -detailLevel mini >> $1
