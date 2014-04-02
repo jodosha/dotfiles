@@ -17,7 +17,13 @@ echo "Copying public key to clipboard. Paste it into your Github account"
 
 echo "Installing Homebrew"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  brew doctor
   brew update
+
+echo "Installing GCC"
+  brew tap homebrew/versions
+  brew install gcc49
+  brew install libtool libyaml libksba
 
 echo "Installing OpenSSL"
   brew install openssl
@@ -25,6 +31,9 @@ echo "Installing OpenSSL"
 echo "Installing Git"
   brew install git
   brew install git-flow
+
+echo "Installing Exuberant Tags"
+  brew install ctags-exuberant
 
 echo "Installing The Silver Searcher"
   brew install the_silver_searcher
@@ -100,7 +109,8 @@ echo "** Configuring RubyGems.org account"
   rbenv rehash
 
 echo "** Configuring Heroku account"
-  heroku auth:login
+  curl https://toolbelt.heroku.com/install.sh | sh
+  heroku login
 
 echo "Reloading the shell"
   exec $SHELL -l

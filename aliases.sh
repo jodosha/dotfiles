@@ -16,3 +16,4 @@ alias retag='bundle list --paths=true | xargs ctags --extra=+f --exclude=.git --
 alias dnsflush='dscacheutil -flushcache'
 alias sharp='vim $HOME/Documents/Work/sharp.txt'
 alias a='vim $HOME/.dotfiles/aliases.sh'
+alias web='ruby -run -e httpd . -p 5000'

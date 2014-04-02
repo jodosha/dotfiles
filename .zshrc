@@ -32,20 +32,21 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/aliases.sh
 source $HOME/Dropbox/aliases.sh
 
-export CFLAGS="-g -02"
-export CC="/usr/local/bin/gcc-4.2"
+# export CFLAGS="-g -02"
+# export CC="/usr/local/bin/gcc-4.8"
+# export GCC="/usr/local/bin/gcc-4.8"
+# export CPP="/usr/local/bin/cpp-4.8"
+# export CXX="/usr/local/bin/g++-4.8"
+export LC_ALL=en_US.UTF-8
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 export RBENV_ROOT="$HOME/.rbenv"
-export PATH="$HOME/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin"
+export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="vim"
 
-export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_GC_HEAP_INIT_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=100000000
 export RUBY_HEAP_FREE_MIN=500000
-
-# added by travis gem
-source /Users/luca/.travis/travis.sh
 
 eval "$(rbenv init -)"

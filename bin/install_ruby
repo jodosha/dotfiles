@@ -2,10 +2,10 @@
 version=$(cat $HOME/.dotfiles/.rbenv-version)
 
 echo "** Installing ruby-build"
-  brew update && brew remove --force ruby-build && brew install --HEAD ruby-build
+  brew update && brew remove --force ruby-build && brew install ruby-build
 
 echo "** Compiling Ruby"
-  export RUBY_CONFIGURE_OPTS="--enable-dtrace --with-opt-dir=`brew --prefix openssl`"
+  export RUBY_CONFIGURE_OPTS="--enable-dtrace --with-openssl-dir=`brew --prefix openssl`"
   rbenv install $version
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
   rbenv global $version
@@ -18,6 +18,5 @@ echo "** Installing basic gems"
   gem install debugger-ruby_core_source
   gem install debugger-linecache
   gem install debugger
-  gem install heroku
 
   rbenv rehash

@@ -113,13 +113,15 @@ function! RunGreenbarFocusedTest(file, line)
 endfunction
 
 " Powerline
-let g:tmuxline_powerline_separators = 1
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'b'    : '#W',
-      \'win'  : '#I #W',
-      \'cwin' : '#I #W',
-      \'z'    : '#H'}
+" let g:tmuxline_powerline_separators = 1
+" let g:tmuxline_preset = {
+"       \'a'    : '#S',
+"       \'b'    : '#W',
+"       \'win'  : '#I #W',
+"       \'cwin' : '#I #W',
+"       \'z'    : '#H'}
+
+" let g:airline_powerline_fonts = 1
 
 " The Silver Searcher
 " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
