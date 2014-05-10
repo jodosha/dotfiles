@@ -1,9 +1,4 @@
-# #RVM settings
-# if [[ -s ~/.rvm/scripts/rvm ]] ; then 
-#   RPS1="%{$fg[yellow]%}rvm:%{$reset_color%}%{$fg[red]%}\$(~/.rvm/bin/rvm-prompt)%{$reset_color%} $EPS1"
-# fi
-
-RPS1="%{$fg[yellow]%}rb:%{$reset_color%}%{$fg[red]%}\$(rbenv version-name)%{$reset_color%} $EPS1"
+RPS1="%{$fg[yellow]%}rb:%{$reset_color%}%{$fg[red]%}\$(chruby_prompt_info)%{$reset_color%} $EPS1"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"

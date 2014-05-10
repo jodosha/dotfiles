@@ -61,8 +61,12 @@ echo "Installing Node"
   brew install node
   curl http://npmjs.org/install.sh | sh
 
-echo "Installing Rbenv"
-  brew install rbenv
+echo "Installing Chruby"
+  brew install chruby
+  ln_s .ruby-version .
+
+echo "Installing ruby-install"
+  brew install ruby-install
 
 echo "Cloning dotfiles repo"
   rm -rf ~/.dotfiles
@@ -105,8 +109,6 @@ echo "Installing Ruby"
 echo "** Configuring RubyGems.org account"
   mkdir -p ~/.gem
   curl -u jodosha https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
-
-  rbenv rehash
 
 echo "** Configuring Heroku account"
   curl https://toolbelt.heroku.com/install.sh | sh

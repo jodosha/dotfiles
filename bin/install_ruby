@@ -1,22 +1,11 @@
 #!/bin/bash
-version=$(cat $HOME/.dotfiles/.rbenv-version)
-
-echo "** Installing ruby-build"
-  brew update && brew remove --force ruby-build && brew install ruby-build
+version=$(cat $HOME/.dotfiles/.ruby-version)
 
 echo "** Compiling Ruby"
-  export RUBY_CONFIGURE_OPTS="--enable-dtrace --with-openssl-dir=`brew --prefix openssl`"
-  rbenv install $version
-  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-  rbenv global $version
-  rbenv rehash
+  ruby-install $version -- --enable-shared --enable-dtrace CFLAGS="-O3"
 
 echo "** Installing basic gems"
   echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
   gem update --system
   gem install bundler
-  gem install debugger-ruby_core_source
-  gem install debugger-linecache
-  gem install debugger
-
-  rbenv rehash
+  gem install byebug

@@ -24,7 +24,7 @@ ZSH_THEME="jodosha"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-completion git-flow brew gem npm osx rails redis-cli ruby rbenv)
+plugins=(git git-completion git-flow brew gem npm osx rails redis-cli ruby chruby)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,4 +49,6 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=100000000
 export RUBY_HEAP_FREE_MIN=500000
 
-eval "$(rbenv init -)"
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby $(cat $HOME/.ruby-version)
