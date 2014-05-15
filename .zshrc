@@ -49,6 +49,9 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=100000000
 export RUBY_HEAP_FREE_MIN=500000
 
+export GOROOT="/usr/local/Cellar/go/1.2.1/libexec"
+export GOPATH="/usr/local/Cellar/go"
+
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby $(cat $HOME/.ruby-version)
