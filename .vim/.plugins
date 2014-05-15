@@ -1,5 +1,4 @@
 ack.vim       https://github.com/mileszs/ack.vim.git
-bundler       https://github.com/tpope/vim-bundler.git
 coffee-script https://github.com/kchmck/vim-coffee-script.git
 commentary    https://github.com/tpope/vim-commentary.git
 ctrlp.vim     https://github.com/kien/ctrlp.vim.git
@@ -16,9 +15,8 @@ tabular       https://github.com/godlygeek/tabular.git
 tagbar        https://github.com/majutsushi/tagbar.git
 tmuxline.vim  https://github.com/edkolev/tmuxline.vim.git
 tslime.vim    https://github.com/jgdavey/tslime.vim.git
-vim-airline   https://github.com/bling/vim-airline.git
 vim-devnotes  git@github.com:jodosha/vim-devnotes.git
 vim-dispatch  https://github.com/tpope/vim-dispatch.git
+vim-go        https://github.com/fatih/vim-go.git
 vim-greenbar  git@github.com:jodosha/vim-greenbar.git
 vim-turbux    https://github.com/jgdavey/vim-turbux.git
-vim-unstack   https://github.com/mattboehm/vim-unstack.git
