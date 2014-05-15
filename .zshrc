@@ -39,8 +39,7 @@ source $HOME/Dropbox/aliases.sh
 # export CXX="/usr/local/bin/g++-4.8"
 export LC_ALL=en_US.UTF-8
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
-export RBENV_ROOT="$HOME/.rbenv"
-export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
+export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="vim"
 
 export RUBY_GC_HEAP_INIT_SLOTS=1000000

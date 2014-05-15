@@ -69,9 +69,6 @@ nnoremap <C-H> <C-W><C-H>
 " Buffers
 map <leader>bd :bufdo bdelete<cr>
 
-" Ruby
-let g:ruby_path = '/usr/local/opt/rbenv/shims'
-
 " ctags
 " map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `gem environment gemdir`/gems/*<CR><CR>
 map <silent> <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
