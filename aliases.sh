@@ -10,6 +10,7 @@ alias gsh='git show HEAD'
 alias gd='git diff'
 alias grev='git diff master'
 alias gsu='git submodule foreach git pull origin master'
+alias changelog='git log --format="%h %ai %an %s"'
 
 # Misc
 alias retag='bundle list --paths=true | xargs ctags --extra=+f --exclude=.git --exclude=log --languages=-javascript -R *'
