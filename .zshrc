@@ -38,7 +38,12 @@ source $HOME/Dropbox/aliases.sh
 # export CPP="/usr/local/bin/cpp-4.8"
 # export CXX="/usr/local/bin/g++-4.8"
 export LC_ALL=en_US.UTF-8
+
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+
+export GOROOT="/usr/local/Cellar/go/1.2.1/libexec"
+export GOPATH="$HOME/Code/go"
+
 export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOPATH/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="vim"
 
@@ -47,9 +52,6 @@ export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=100000000
 export RUBY_HEAP_FREE_MIN=500000
-
-export GOROOT="/usr/local/Cellar/go/1.2.1/libexec"
-export GOPATH="/usr/local/Cellar/go"
 
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
