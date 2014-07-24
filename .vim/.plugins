@@ -1,4 +1,5 @@
 ack.vim       https://github.com/mileszs/ack.vim.git
+auto_mkdir    https://github.com/DataWraith/auto_mkdir.git
 coffee-script https://github.com/kchmck/vim-coffee-script.git
 commentary    https://github.com/tpope/vim-commentary.git
 ctrlp.vim     https://github.com/kien/ctrlp.vim.git
