@@ -76,6 +76,7 @@ echo "Installing Oh-My-ZSH"
   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   ln_s jodosha.zsh-theme .oh-my-zsh/themes
   ln_s .zshrc .
+  [[ -f /etc/zprofile ]] || sudo mv /etc/zshenv /etc/zprofile
   chsh -s /bin/zsh
 
 echo "Configuring Tmux"

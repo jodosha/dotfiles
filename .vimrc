@@ -17,7 +17,7 @@ set ruler                                                                    " S
 set number                                                                   " Show line numbers
 set showcmd                                                                  " Display incomplete commands
 set cursorline                                                               " Highlight current cursor line
-set shell=/usr/local/bin/zsh                                                 " Default shell is ZSH
+set shell=$SHELL                                                             " Default shell is ZSH
 set statusline=%<%f\ %h%m%r%=\ %{devnotes#statusline()}\ %-14.(%l,%c%V%)\ %P " Status line format
 
 " Tabs and white spaces
