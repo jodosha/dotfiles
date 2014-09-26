@@ -28,6 +28,9 @@ echo "Installing GCC"
 echo "Installing OpenSSL"
   brew install openssl
 
+echo "Installing GPG"
+  brew install gpg
+
 echo "Installing Git"
   brew install git
   brew install git-flow
@@ -60,6 +63,10 @@ echo "Install MongoDB"
 echo "Installing Node"
   brew install node
   curl http://npmjs.org/install.sh | sh
+
+echo "Installing Keybase"
+  npm install -g keybase-installer
+  keybase-installer
 
 echo "Installing Chruby"
   brew install chruby
