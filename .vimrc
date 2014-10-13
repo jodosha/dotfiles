@@ -109,6 +109,37 @@ function! RunGreenbarFocusedTest(file, line)
   return SendFocusedTestToTmux(a:file, a:line)
 endfunction
 
+function! Projector()
+  colorscheme Tomorrow
+  set guifont=Menlo\ bold:h16
+endfunction
+
+map <F2> :call Projector()<CR>
+
+function! ReadDemoingSlideInformations()
+  let g:demoing_file_name = str2nr(expand("%:r"))
+  let g:demoing_file_type = "." . expand("%:e")
+endfunction
+
+function! LoadDemoingSlide()
+  execute "edit " . g:demoing_file_name . g:demoing_file_type
+endfunction
+
+function! NextDemoingSlide()
+  call ReadDemoingSlideInformations()
+  let g:demoing_file_name += 1
+  call LoadDemoingSlide()
+endfunction
+
+function! PreviousDemoingSlide()
+  call ReadDemoingSlideInformations()
+  let g:demoing_file_name -= 1
+  call LoadDemoingSlide()
+endfunction
+
+map <F4> :call NextDemoingSlide()<CR>
+map <F3> :call PreviousDemoingSlide()<CR>
+
 " Powerline
 " let g:tmuxline_powerline_separators = 1
 " let g:tmuxline_preset = {
