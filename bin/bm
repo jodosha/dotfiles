@@ -1,27 +1,25 @@
 #!/usr/bin/env bash
+output=$1
 
 CODE=$( cat <<EOS
 #!/usr/bin/env ruby
-require 'benchmark'
+require 'benchmark/ips'
 
-TIMES = ENV['TIMES'] || 100_000
-
-Benchmark.bm(30) do |bm|
-  bm.report '' do
-    TIMES.times do
-    end
-  end
-
-  bm.report '' do
-    TIMES.times do
-    end
-  end
+Benchmark.ips do |x|
+  x.report('') { }
+  x.report('') { }
 end
 
 __END__
 EOS)
 
-echo "$CODE" > $1
+echo "$CODE" > $output
 chmod +x $1
 
-system_profiler SPHardwareDataType SPSoftwareDataType -detailLevel mini >> $1
+echo Ruby:      >> $output
+echo ""         >> $output
+echo -en '    ' >> $output
+echo $(ruby -v) >> $output
+echo ""         >> $output
+
+system_profiler SPHardwareDataType SPSoftwareDataType -detailLevel mini >> $output
