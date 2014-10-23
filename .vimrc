@@ -4,6 +4,7 @@ set nobackup         " Don't backup
 set nowritebackup    " Write file in place
 set noswapfile       " Don't use swap files (.swp)
 set autoread         " Autoreload buffers
+set autowrite        " Automatically save changes before switching buffers
 syntax enable        " Enable syntax highlight
 
 " pathogen

@@ -5,6 +5,7 @@ commentary    https://github.com/tpope/vim-commentary.git
 ctrlp.vim     https://github.com/kien/ctrlp.vim.git
 endwise       https://github.com/tpope/vim-endwise.git
 fugitive      https://github.com/tpope/vim-fugitive.git
+git-grep-vim  https://github.com/henrik/git-grep-vim.git
 javascript    https://github.com/pangloss/vim-javascript.git
 rails         https://github.com/tpope/vim-rails.git
 ruby          https://github.com/vim-ruby/vim-ruby.git
@@ -21,4 +22,5 @@ vim-devnotes  git@github.com:jodosha/vim-devnotes.git
 vim-dispatch  https://github.com/tpope/vim-dispatch.git
 vim-go        https://github.com/fatih/vim-go.git
 vim-greenbar  git@github.com:jodosha/vim-greenbar.git
+vim-qargs     https://github.com/henrik/vim-qargs.git
 vim-turbux    https://github.com/jgdavey/vim-turbux.git
