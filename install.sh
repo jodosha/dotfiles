@@ -57,8 +57,8 @@ echo "Installing PostgreSQL"
 echo "Installing Redis"
   brew install redis
 
-echo "Install MongoDB"
-  brew install mongo
+echo "Installing Go"
+  brew install go --cross-compile-all
 
 echo "Installing Node"
   brew install node

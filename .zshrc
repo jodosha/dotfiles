@@ -41,7 +41,7 @@ export LC_ALL=en_US.UTF-8
 
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 
-export GOROOT="/usr/local/Cellar/go/1.2.1/libexec"
+export GOROOT="/usr/local/Cellar/go/1.3.3/libexec"
 export GOPATH="$HOME/Code/go"
 
 export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOPATH/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
