@@ -47,11 +47,11 @@ export GOPATH="$HOME/Code/go"
 export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOPATH/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="vim"
 
-export RUBY_GC_HEAP_INIT_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=100000000
-export RUBY_HEAP_FREE_MIN=500000
+# export RUBY_GC_HEAP_INIT_SLOTS=1000000
+# export RUBY_HEAP_SLOTS_INCREMENT=1000000
+# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+# export RUBY_GC_MALLOC_LIMIT=100000000
+# export RUBY_HEAP_FREE_MIN=500000
 export JRUBY_OPTS="--2.0"
 
 source /usr/local/opt/chruby/share/chruby/chruby.sh

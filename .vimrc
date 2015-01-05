@@ -141,6 +141,14 @@ endfunction
 map <F4> :call NextDemoingSlide()<CR>
 map <F3> :call PreviousDemoingSlide()<CR>
 
+nmap <buffer> <F5> <Plug>(seeing-is-believing-run)
+xmap <buffer> <F5> <Plug>(seeing-is-believing-run)
+imap <buffer> <F5> <Plug>(seeing-is-believing-run)
+
+nmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
+xmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
+imap <buffer> <F6> <Plug>(seeing-is-believing-mark)
+
 " Powerline
 " let g:tmuxline_powerline_separators = 1
 " let g:tmuxline_preset = {

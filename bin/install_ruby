@@ -9,3 +9,4 @@ echo "** Installing basic gems"
   gem update --system
   gem install bundler
   gem install byebug
+  gem install seeing_is_believing
