@@ -4,16 +4,12 @@ name=$1
 dir="$HOME/Code/$name"
 cd $dir
 
-# "$HOME/.tmux/services/$1"
-
-if ! tmux has-session -t $name ; then
-  tmux start                                 \;\
-    new-session -d -s $name exit             \;\
-    set default-path $dir                    \;\
-    set set-remain-on-exit on                \;\
-    source-file "$HOME/.tmux.conf"           \;\
-    source-file "$HOME/.tmux/profiles/$name" \;\
-    set set-remain-on-exit off
+if !(tmux has-session -t "$name" 2> /dev/null); then
+  tmux start                     \;\
+    set -g set-remain-on-exit on \;\
+    new-session -d -s $name
 fi
 
+tmux source-file "$HOME/.tmux.conf"
+tmux source-file "$HOME/.tmux/profiles/$name.tmuxrc"
 tmux attach -t $name
