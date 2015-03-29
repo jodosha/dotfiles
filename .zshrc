@@ -39,7 +39,7 @@ source $HOME/Dropbox/aliases.sh
 # export CXX="/usr/local/bin/g++-4.8"
 export LC_ALL=en_US.UTF-8
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 export GOROOT="/usr/local/Cellar/go/1.3.3/libexec"
 export GOPATH="$HOME/Code/go"
