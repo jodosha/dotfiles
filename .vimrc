@@ -94,12 +94,12 @@ let g:turbux_command_prefix = 'greenbar zeus' "
 
 " Run RSpec examples. Loosely inspired by: https://gist.github.com/1062296
 function! RunSpec(args)
-  let cmd = "bundle exec rspec " . a:args . " " . @%
+  let cmd = "bundle exec rspec " . @% . a:args
   execute ":! echo " . cmd . " && " . cmd
 endfunction
 
 map <silent> <leader>r :call RunSpec("") <CR>
-map <silent> <leader>re :call RunSpec("-fn -l " . line('.')) <CR>
+map <silent> <leader>re :call RunSpec(":" . line('.')) <CR>
 
 " Greenbar
 function! RunGreenbarTest(file)
