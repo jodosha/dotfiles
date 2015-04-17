@@ -25,4 +25,5 @@ vim-go                  https://github.com/fatih/vim-go.git
 vim-greenbar            git@github.com:jodosha/vim-greenbar.git
 vim-qargs               https://github.com/henrik/vim-qargs.git
 vim-seeing-is-believing https://github.com/hwartig/vim-seeing-is-believing.git
+vim-slim                https://github.com/slim-template/vim-slim.git
 vim-turbux              https://github.com/jgdavey/vim-turbux.git
