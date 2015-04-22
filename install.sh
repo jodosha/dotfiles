@@ -75,6 +75,17 @@ echo "Installing Chruby"
 echo "Installing ruby-install"
   brew install ruby-install
 
+echo "Installing Homebrew Cask"
+  brew install caskroom/cask/brew-cask
+
+echo "Installing Virtualbox"
+  brew cask install virtualbox
+
+echo "Installing Docker"
+  brew install docker
+  brew install boot2docker
+  brew install docker-compose
+
 echo "Cloning dotfiles repo"
   rm -rf ~/.dotfiles
   git clone git@github.com:jodosha/dotfiles.git ~/.dotfiles

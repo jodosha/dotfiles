@@ -24,7 +24,7 @@ ZSH_THEME="jodosha"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-completion git-flow brew gem npm osx rails bundler redis-cli ruby chruby)
+plugins=(git git-completion git-flow brew gem npm osx rails bundler redis-cli ruby chruby docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,6 +56,8 @@ export EDITOR="vim"
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby $(cat $HOME/.ruby-version)
+
+$(boot2docker shellinit 2>/dev/null)
 
 # added by travis gem
 [ -f /Users/luca/.travis/travis.sh ] && source /Users/luca/.travis/travis.sh
