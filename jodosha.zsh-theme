@@ -1,7 +1,6 @@
-RPS1="%{$fg[yellow]%}rb:%{$reset_color%}%{$fg[red]%}\$(chruby_prompt_info)%{$reset_color%} $EPS1"
-
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}["
-ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"
+ZSH_THEME_CHRUBY_PROMPT="%{$fg[yellow]%}%{$reset_color%}%{$fg[red]%}$(chruby_prompt_info)%{$reset_color%} $EPS1"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
@@ -13,5 +12,4 @@ git_custom_status() {
   fi
 }
 
-THUNDER=$'\e[31;1m⚡\e[0m'
-PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B%%%b '
+PROMPT='$(git_custom_status)%{$fg[cyan]%} %~% %{$reset_color%}:$ZSH_THEME_CHRUBY_PROMPT➜ '
