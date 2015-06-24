@@ -57,7 +57,7 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby $(cat $HOME/.ruby-version)
 
-$(boot2docker shellinit 2>/dev/null)
+# $(boot2docker shellinit 2>/dev/null)
 
 # added by travis gem
 [ -f /Users/luca/.travis/travis.sh ] && source /Users/luca/.travis/travis.sh
