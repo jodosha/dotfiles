@@ -1,6 +1,6 @@
 # Git
 alias gp!='git push origin $(current_branch)'
-alias gcb='git push -u origin $(current_branch)'
+alias gpb='git push -u origin $(current_branch)'
 alias gs='git status'
 alias gaa='git add --all'
 alias gc='git commit'
@@ -11,6 +11,7 @@ alias gd='git diff'
 alias grev='git diff master'
 alias gsu='git submodule foreach git pull origin master'
 alias changelog='git log --format="%h %ai %an %s"'
+alias ggpull='git pull --rebase'
 
 # Misc
 alias retag='bundle list --paths=true | xargs ctags --extra=+f --exclude=.git --exclude=log --languages=-javascript -R *'
