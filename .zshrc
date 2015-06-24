@@ -41,10 +41,10 @@ export LC_ALL=en_US.UTF-8
 
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-export GOROOT="/usr/local/Cellar/go/1.3.3/libexec"
+export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/Code/go"
 
-export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOPATH/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
+export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="vim"
 
 # export RUBY_GC_HEAP_INIT_SLOTS=1000000
