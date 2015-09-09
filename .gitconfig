@@ -12,6 +12,7 @@
   tool = opendiff
 [push]
   branch = current
+	default = simple
 [pull]
   branch = current
 [github]
