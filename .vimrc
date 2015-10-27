@@ -71,8 +71,7 @@ nnoremap <C-H> <C-W><C-H>
 map <leader>bd :bufdo bdelete<cr>
 
 " ctags
-" map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `gem environment gemdir`/gems/*<CR><CR>
-map <silent> <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
+map <silent> <Leader>rt :!retag<cr>
 nmap <F8> :TagbarToggle<CR>
 
 " Remove highlight after search

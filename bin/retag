@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+shopt -s nullglob
+ctags --recurse . `bundle show --paths` $RUBY_ROOT/lib/ruby/[0-9]* $RUBY_ROOT/lib/ruby/site_ruby/[0-9]* $RUBY_ROOT/lib/ruby/vendor_ruby/[0-9]* --exclude=.git,log,tmp,doc,coverage,pkg --languages=-javascript
+ctags --recurse --append --languages=C,C++ $RUBY_ROOT/include
