@@ -140,6 +140,22 @@ endfunction
 map <F4> :call NextDemoingSlide()<CR>
 map <F3> :call PreviousDemoingSlide()<CR>
 
+function! Carousel()
+  for theme in split(globpath(&runtimepath, 'colors/*.vim'), '\n')
+    let t = fnamemodify(theme, ':t:r')
+    try
+      execute 'colorscheme '.t
+      echo t
+    catch
+    finally
+    endtry
+    sleep 4
+    redraw
+  endfor
+endfunction
+
+map <silent> <Leader>tc :call Carousel()<cr>
+
 nmap <buffer> <F5> <Plug>(seeing-is-believing-run)
 xmap <buffer> <F5> <Plug>(seeing-is-believing-run)
 imap <buffer> <F5> <Plug>(seeing-is-believing-run)

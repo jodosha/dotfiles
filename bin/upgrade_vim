@@ -2,6 +2,8 @@
 vimhome=$HOME/.vim
 plugins=$vimhome/.plugins
 base=$vimhome/bundle
+colors=$vimhome/colors
+colorschemes=$base/vim-colorschemes/colors
 
 mkdir -p $base
 
@@ -17,3 +19,8 @@ do
     git clone $git $path
   fi
 done < $plugins
+
+if [ -d $colorschemes ]; then
+  echo "Copying color schemes"
+  cp $colorschemes/* $colors
+fi

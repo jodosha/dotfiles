@@ -18,6 +18,7 @@ tabular                 https://github.com/godlygeek/tabular.git
 tagbar                  https://github.com/majutsushi/tagbar.git
 tmuxline.vim            https://github.com/edkolev/tmuxline.vim.git
 tslime.vim              https://github.com/jgdavey/tslime.vim.git
+vim-colorschemes        https://github.com/flazz/vim-colorschemes.git
 vim-devnotes            git@github.com:jodosha/vim-devnotes.git
 vim-dispatch            https://github.com/tpope/vim-dispatch.git
 vim-es6                 https://github.com/isRuslan/vim-es6.git
