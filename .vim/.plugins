@@ -20,11 +20,12 @@ tmuxline.vim            https://github.com/edkolev/tmuxline.vim.git
 tslime.vim              https://github.com/jgdavey/tslime.vim.git
 vim-devnotes            git@github.com:jodosha/vim-devnotes.git
 vim-dispatch            https://github.com/tpope/vim-dispatch.git
+vim-es6                 https://github.com/isRuslan/vim-es6.git
 vim-github-dashboard    https://github.com/junegunn/vim-github-dashboard.git
 vim-go                  https://github.com/fatih/vim-go.git
 vim-greenbar            git@github.com:jodosha/vim-greenbar.git
+vim-lotus               https://github.com/avdgaag/vim-lotus.git
 vim-qargs               https://github.com/henrik/vim-qargs.git
 vim-seeing-is-believing https://github.com/hwartig/vim-seeing-is-believing.git
 vim-slim                https://github.com/slim-template/vim-slim.git
 vim-turbux              https://github.com/jgdavey/vim-turbux.git
-vim-lotus               https://github.com/avdgaag/vim-lotus.git
