@@ -102,7 +102,8 @@ echo "Configuring Tmux"
 
 echo "Configuring Git"
   ln_s .gitconfig .
-  ln_s gitignore .gitignore
+  ln_s .gitignore_global .gitignore_global
+  git config --global core.excludesfile ~/.gitignore_global
 
 echo "Installing user defined scripts"
   mkdir -p ~/bin
