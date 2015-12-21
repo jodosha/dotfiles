@@ -38,6 +38,7 @@ source $HOME/Dropbox/aliases.sh
 # export CPP="/usr/local/bin/cpp-4.8"
 # export CXX="/usr/local/bin/g++-4.8"
 export LC_ALL=en_US.UTF-8
+export TERM="xterm-256color"
 
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
