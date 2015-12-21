@@ -92,7 +92,7 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-let g:turbux_command_prefix = 'greenbar zeus' "
+let g:turbux_command_prefix = 'greenbar' "
 
 " Run RSpec examples. Loosely inspired by: https://gist.github.com/1062296
 function! RunSpec(args)
