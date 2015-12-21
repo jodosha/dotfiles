@@ -43,8 +43,11 @@ let g:seoul256_background = 235
 colo seoul256
 set guifont=Menlo\ bold:h14  " Font is Menlo
 set linespace=2
-set antialias
 set visualbell
+
+if !has('nvim')
+  set antialias
+endif
 
 set guioptions-=T            " Hide the Vim toolbar
 set guioptions-=r            " Hide the Vim scrollbars
