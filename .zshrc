@@ -45,7 +45,9 @@ export TERM="xterm-256color"
 export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/Code/go"
 
-export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
+export RUST_HOME="/usr/local/Cellar/rust/1.5.0"
+
+export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:$RUST_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="vim"
 
 # export RUBY_GC_HEAP_INIT_SLOTS=1000000
