@@ -207,6 +207,7 @@ if has('nvim')
   nnoremap <silent> <leader>re :call neoterm#test#run('file')<cr>
   nnoremap <silent> <leader>rew :call neoterm#test#run('current')<cr>
   nnoremap <silent> <leader>rr :call neoterm#test#rerun()<cr>
+  nnoremap <silent> <leader>rc :call neoterm#close()<cr>
 
   set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
   set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
