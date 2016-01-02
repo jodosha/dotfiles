@@ -198,3 +198,13 @@ if executable('ag')
 
   nnoremap , :Ag<SPACE>
 endif
+
+if has('nvim')
+  let g:neoterm_position = 'horizontal'
+
+  " run set test lib
+  nnoremap <silent> <leader>r :call neoterm#test#run('all')<cr>
+  nnoremap <silent> <leader>re :call neoterm#test#run('file')<cr>
+  nnoremap <silent> <leader>rew :call neoterm#test#run('current')<cr>
+  nnoremap <silent> <leader>rr :call neoterm#test#rerun()<cr>
+endif
