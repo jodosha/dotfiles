@@ -22,6 +22,7 @@ tslime.vim              https://github.com/jgdavey/tslime.vim.git
 vim-colorschemes        https://github.com/flazz/vim-colorschemes.git
 vim-devnotes            git@github.com:jodosha/vim-devnotes.git
 vim-dispatch            https://github.com/tpope/vim-dispatch.git
+vim-elixir              https://github.com/elixir-lang/vim-elixir.git
 vim-es6                 https://github.com/isRuslan/vim-es6.git
 vim-github-dashboard    https://github.com/junegunn/vim-github-dashboard.git
 vim-go                  https://github.com/fatih/vim-go.git
