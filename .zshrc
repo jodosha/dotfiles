@@ -43,6 +43,8 @@ export TERM="xterm-256color"
 
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
+export OPENSSL_ROOT_DIR=$(brew --prefix openssl)
+
 export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/Code/go"
 
