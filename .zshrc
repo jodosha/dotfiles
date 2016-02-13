@@ -51,7 +51,7 @@ export GOPATH="$HOME/Code/go"
 export RUST_HOME="/usr/local/Cellar/rust/1.5.0"
 
 export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:$RUST_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # export RUBY_GC_HEAP_INIT_SLOTS=1000000
 # export RUBY_HEAP_SLOTS_INCREMENT=1000000
