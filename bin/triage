@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+main() {
+  local frankly=$HOME/Code/frankly
+  local port=2018
+
+  cd $frankly
+  open http://localhost:$port
+  ruby -run -e httpd . -p $port
+}
+
+main
