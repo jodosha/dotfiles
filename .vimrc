@@ -201,6 +201,9 @@ endif
 
 if has('nvim')
   let g:neoterm_position = 'horizontal'
+  let g:neoterm_run_tests_bg             = 1
+  let g:neoterm_raise_when_tests_fail    = 1
+  let g:neoterm_close_when_tests_succeed = 1
 
   " run set test lib
   nnoremap <silent> <leader>r :call neoterm#test#run('all')<cr>
