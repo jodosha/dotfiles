@@ -64,6 +64,8 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby_auto
 # chruby $(cat $HOME/.ruby-version)
 
+# eval "$(chef shell-init zsh)"
+# eval "$(/Users/luca/.chefvm/bin/chefvm init -)"
 eval "$(docker-machine env dev)"
 
 # added by travis gem
