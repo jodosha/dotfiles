@@ -49,6 +49,7 @@ export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/Code/go"
 
 export RUST_HOME="/usr/local/Cellar/rust/1.5.0"
+export PGDATA="/usr/local/var/postgres9.5"
 
 export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:$RUST_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="nvim"
