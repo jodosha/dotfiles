@@ -75,6 +75,9 @@ echo "Installing Chruby"
 echo "Installing ruby-install"
   brew install ruby-install
 
+echo "Configuring Ruby installation"
+  ln_s .pryrc .
+
 echo "Installing Homebrew Cask"
   brew install caskroom/cask/brew-cask
 
