@@ -1,5 +1,6 @@
 ack.vim                 https://github.com/mileszs/ack.vim.git
 auto_mkdir              https://github.com/DataWraith/auto_mkdir.git
+base16-vim              https://github.com/chriskempson/base16-vim.git
 coffee-script           https://github.com/kchmck/vim-coffee-script.git
 commentary              https://github.com/tpope/vim-commentary.git
 ctrlp.vim               https://github.com/kien/ctrlp.vim.git
@@ -11,7 +12,6 @@ neoterm                 https://github.com/kassio/neoterm.git
 rails                   https://github.com/tpope/vim-rails.git
 ruby                    https://github.com/vim-ruby/vim-ruby.git
 rust.vim                https://github.com/wting/rust.vim
-seoul256                https://github.com/junegunn/seoul256.vim.git
 supertab                https://github.com/tsaleh/vim-supertab.git
 surround                https://github.com/tpope/vim-surround.git
 syntastic               https://github.com/scrooloose/syntastic.git
@@ -19,7 +19,6 @@ tabular                 https://github.com/godlygeek/tabular.git
 tagbar                  https://github.com/majutsushi/tagbar.git
 tmuxline.vim            https://github.com/edkolev/tmuxline.vim.git
 tslime.vim              https://github.com/jgdavey/tslime.vim.git
-vim-colorschemes        https://github.com/flazz/vim-colorschemes.git
 vim-devnotes            git@github.com:jodosha/vim-devnotes.git
 vim-dispatch            https://github.com/tpope/vim-dispatch.git
 vim-elixir              https://github.com/elixir-lang/vim-elixir.git

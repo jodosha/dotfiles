@@ -29,6 +29,10 @@ plugins=(git git-completion git-flow brew gem npm osx rails bundler redis-cli ru
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+if [[ -s "$HOME/.colours/base16-shell/base16-tomorrow.dark.sh" ]]; then
+  source "$HOME/.colours/base16-shell/base16-tomorrow.dark.sh"
+fi
+
 source $HOME/.dotfiles/aliases.sh
 source $HOME/Dropbox/aliases.sh
 source $HOME/Dropbox/secrets.sh
@@ -55,6 +59,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="/Users/luca/Dropbox/google-vision.json"
 
 export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:$RUST_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="nvim"
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # export RUBY_GC_HEAP_INIT_SLOTS=1000000
 # export RUBY_HEAP_SLOTS_INCREMENT=1000000
