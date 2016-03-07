@@ -5,6 +5,7 @@ coffee-script           https://github.com/kchmck/vim-coffee-script.git
 commentary              https://github.com/tpope/vim-commentary.git
 ctrlp.vim               https://github.com/kien/ctrlp.vim.git
 endwise                 https://github.com/tpope/vim-endwise.git
+file-line               https://github.com/bogado/file-line.git
 fugitive                https://github.com/tpope/vim-fugitive.git
 git-grep-vim            https://github.com/henrik/git-grep-vim.git
 javascript              https://github.com/pangloss/vim-javascript.git
