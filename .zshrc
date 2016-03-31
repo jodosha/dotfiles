@@ -74,7 +74,7 @@ chruby_auto
 
 # eval "$(chef shell-init zsh)"
 # eval "$(/Users/luca/.chefvm/bin/chefvm init -)"
-eval "$(docker-machine env dev)"
+# eval "$(docker-machine env dev)"
 
 # added by travis gem
 [ -f /Users/luca/.travis/travis.sh ] && source /Users/luca/.travis/travis.sh
