@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+root=/Users/luca/Code/hanami
+declare -a directories=(utils router validations model view controller mailer helpers assets hanami)
+declare -a gems=(hanami-utils hanami-router hanami-validations hanami-model hanami-view hanami-controller hanami-mailer hanami-helpers hanami-assets hanami)
+
+uninstall_gems() {
+  echo "== Uninstalling gems.."
+  gem uninstall -axI $gems
+}
+
+install_gems() {
+  echo "== Installing gems.."
+  for rubygem in "${directories[@]}"
+  do
+    pushd $root/$rubygem
+    bundle exec rake install
+    echo "Installed $rubygem"
+    popd
+  done
+}
+
+main() {
+  uninstall_gems
+  install_gems
+}
+
+main
