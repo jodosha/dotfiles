@@ -216,3 +216,15 @@ if has('nvim')
   set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
   set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
 endif
+
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+au FileType go nmap <leader>rt <Plug>(go-run-tab)
+au FileType go nmap <Leader>rs <Plug>(go-run-split)
+au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
+
+let g:go_term_mode = "split"
+let g:go_term_enabled = 1
