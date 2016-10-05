@@ -182,7 +182,7 @@ imap <buffer> <F6> <Plug>(seeing-is-believing-mark)
 " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
 if executable('ag')
   " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --path-to-agignore\ $HOME/.agignore
+  set grepprg=ag\ --nogroup\ --nocolor\ --path-to-ignore\ $HOME/.agignore
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
