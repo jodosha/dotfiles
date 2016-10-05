@@ -37,13 +37,13 @@ set ignorecase  " Searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
 " Apparence
-" colorscheme Tomorrow-Night   " Tomorrow Night is the theme of choice
+colorscheme Tomorrow-Night   " Tomorrow Night is the theme of choice
 " Unified color scheme (default: dark)
 set background=dark
 set guifont=Menlo\ bold:h14  " Font is Menlo
 set linespace=2
 set visualbell
-colorscheme base16-paraiso
+" colorscheme base16-paraiso
 
 if !has('nvim')
   set antialias
