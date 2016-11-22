@@ -159,9 +159,9 @@ endfunction
 
 map <silent> <Leader>tc :call Carousel()<cr>
 
-nmap <buffer> <F5> <Plug>(seeing-is-believing-run)
-xmap <buffer> <F5> <Plug>(seeing-is-believing-run)
-imap <buffer> <F5> <Plug>(seeing-is-believing-run)
+nmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
+xmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
+imap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
 
 nmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
 xmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
