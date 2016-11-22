@@ -19,6 +19,7 @@ install_gems() {
   for directory in "${directories[@]}"
   do
     pushd $root/$directory > /dev/null
+    bundle install > /dev/null
     bundle exec rake install
     echo "Installed $directory"
     popd > /dev/null
