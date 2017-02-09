@@ -78,3 +78,4 @@ chruby_auto
 
 # added by travis gem
 [ -f /Users/luca/.travis/travis.sh ] && source /Users/luca/.travis/travis.sh
+export PATH="/usr/local/opt/openssl/bin:$PATH"
