@@ -26,6 +26,7 @@ vim-elixir              https://github.com/elixir-lang/vim-elixir.git
 vim-es6                 https://github.com/isRuslan/vim-es6.git
 vim-github-dashboard    https://github.com/junegunn/vim-github-dashboard.git
 vim-go                  https://github.com/fatih/vim-go.git
+vim-godebug             https://github.com/jodosha/vim-godebug.git
 vim-lotus               https://github.com/avdgaag/vim-lotus.git
 vim-qargs               https://github.com/henrik/vim-qargs.git
 vim-raml                https://github.com/kennethzfeng/vim-raml.git
