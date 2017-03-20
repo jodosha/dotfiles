@@ -3,6 +3,9 @@
 name=$1
 dir="$HOME/Code/$name"
 cd $dir
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby_auto
 
 if !(tmux has-session -t "$name" 2> /dev/null); then
   tmux start                     \;\
