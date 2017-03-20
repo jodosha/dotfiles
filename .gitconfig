@@ -27,3 +27,5 @@
 	account = personal
 [gpg]
 	program = gpg1
+[url "ssh://git@heroku.com/"]
+	insteadOf = https://git.heroku.com/
