@@ -159,14 +159,6 @@ endfunction
 
 map <silent> <Leader>tc :call Carousel()<cr>
 
-nmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
-xmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
-imap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
-
-nmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
-xmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
-imap <buffer> <F6> <Plug>(seeing-is-believing-mark)
-
 " Powerline
 " let g:tmuxline_powerline_separators = 1
 " let g:tmuxline_preset = {
@@ -199,6 +191,7 @@ if executable('ag')
   nnoremap , :Ag<SPACE>
 endif
 
+" Ruby
 if has('nvim')
   let g:neoterm_position = 'horizontal'
   let g:neoterm_run_tests_bg             = 1
@@ -206,25 +199,63 @@ if has('nvim')
   let g:neoterm_close_when_tests_succeed = 1
 
   " run set test lib
-  nnoremap <silent> <leader>r :call neoterm#test#run('all')<cr>
-  nnoremap <silent> <leader>re :call neoterm#test#run('file')<cr>
-  nnoremap <silent> <leader>rew :call neoterm#test#run('current')<cr>
-  nnoremap <silent> <leader>rr :call neoterm#test#rerun()<cr>
-  nnoremap <silent> <leader>rc :call neoterm#close()<cr>
+  " nnoremap <silent> <leader>r :call neoterm#test#run('all')<cr>
+  " nnoremap <silent> <leader>re :call neoterm#test#run('file')<cr>
+  " nnoremap <silent> <leader>rew :call neoterm#test#run('current')<cr>
+  " nnoremap <silent> <leader>rr :call neoterm#test#rerun()<cr>
+  " nnoremap <silent> <leader>rc :call neoterm#close()<cr>
 
-  set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
-  set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
-  set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
+  " set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
+  " set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
+  " set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
 endif
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
+nmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
+xmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
+imap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
+
+nmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
+xmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
+imap <buffer> <F6> <Plug>(seeing-is-believing-mark)
+
+" Go
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:deoplete#enable_at_startup = 1
+
+"" Run Go
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
 
 au FileType go nmap <leader>rt <Plug>(go-run-tab)
 au FileType go nmap <Leader>rs <Plug>(go-run-split)
 au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
+
+"" Go docs
+au FileType go nmap <leader>ds <Plug>(go-def-split)
+au FileType go nmap <leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
+
+au FileType go nmap <leader>gb <Plug>(go-doc-browser)
+
+"" Go types
+au FileType go nmap <leader>s <Plug>(go-implements)
+au FileType go nmap <leader>i <Plug>(go-info)
 
 let g:go_term_mode = "split"
 let g:go_term_enabled = 1
