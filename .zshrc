@@ -29,9 +29,6 @@ plugins=(git git-completion git-flow brew gem npm osx rails bundler redis-cli ru
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-if [[ -s "$HOME/.colours/base16-shell/base16-tomorrow.dark.sh" ]]; then
-  source "$HOME/.colours/base16-shell/base16-tomorrow.dark.sh"
-fi
 
 source $HOME/.dotfiles/aliases.sh
 source $HOME/Dropbox/aliases.sh
@@ -75,6 +72,9 @@ chruby_auto
 # eval "$(chef shell-init zsh)"
 # eval "$(/Users/luca/.chefvm/bin/chefvm init -)"
 # eval "$(docker-machine env dev)"
+
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # added by travis gem
 [ -f /Users/luca/.travis/travis.sh ] && source /Users/luca/.travis/travis.sh
