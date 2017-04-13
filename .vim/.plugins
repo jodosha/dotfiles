@@ -26,6 +26,7 @@ tmuxline.vim            https://github.com/edkolev/tmuxline.vim.git
 tslime.vim              https://github.com/jgdavey/tslime.vim.git
 vim-airline             https://github.com/vim-airline/vim-airline.git
 vim-airline-themes      https://github.com/vim-airline/vim-airline-themes.git
+vim-alchemist           https://github.com/slashmili/alchemist.vim.git
 vim-devnotes            git@github.com:jodosha/vim-devnotes.git
 vim-dispatch            https://github.com/tpope/vim-dispatch.git
 vim-elixir              https://github.com/elixir-lang/vim-elixir.git
@@ -34,6 +35,7 @@ vim-github-dashboard    https://github.com/junegunn/vim-github-dashboard.git
 vim-go                  https://github.com/fatih/vim-go.git
 vim-godebug             https://github.com/jodosha/vim-godebug.git
 vim-lotus               https://github.com/avdgaag/vim-lotus.git
+vim-projectionist       https://github.com/tpope/vim-projectionist.git
 vim-qargs               https://github.com/henrik/vim-qargs.git
 vim-raml                https://github.com/kennethzfeng/vim-raml.git
 vim-seeing-is-believing https://github.com/hwartig/vim-seeing-is-believing.git
