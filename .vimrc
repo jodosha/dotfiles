@@ -43,6 +43,7 @@ set guifont=Consolas\ bold:h14  " Font is Consolas
 set linespace=2
 set visualbell
 colorscheme base16-eighties
+let g:airline_theme='base16_eighties'
 
 if !has('nvim')
   set antialias

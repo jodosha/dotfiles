@@ -24,6 +24,8 @@ tabular                 https://github.com/godlygeek/tabular.git
 tagbar                  https://github.com/majutsushi/tagbar.git
 tmuxline.vim            https://github.com/edkolev/tmuxline.vim.git
 tslime.vim              https://github.com/jgdavey/tslime.vim.git
+vim-airline             https://github.com/vim-airline/vim-airline.git
+vim-airline-themes      https://github.com/vim-airline/vim-airline-themes.git
 vim-devnotes            git@github.com:jodosha/vim-devnotes.git
 vim-dispatch            https://github.com/tpope/vim-dispatch.git
 vim-elixir              https://github.com/elixir-lang/vim-elixir.git
