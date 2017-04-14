@@ -1,26 +1,2 @@
 #!/bin/bash
-vimhome=$HOME/.vim
-plugins=$vimhome/.plugins
-base=$vimhome/bundle
-colors=$vimhome/colors
-colorschemes=$base/vim-colorschemes/colors
-
-mkdir -p $base
-
-while read name git
-do
-  path="$base/$name"
-
-  if [ -d $path ]; then
-    echo "Updating $name"
-    cd $path && git pull
-  else
-    echo "Installing $name"
-    git clone $git $path
-  fi
-done < $plugins
-
-if [ -d $colorschemes ]; then
-  echo "Copying color schemes"
-  cp $colorschemes/* $colors
-fi
+vim +PluginUpdate +qall

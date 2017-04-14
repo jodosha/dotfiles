@@ -1,3 +1,5 @@
+source ~/.vim/plugins.vim
+
 set nocompatible     " Vim behavior, not Vi.
 set encoding=utf-8   " Use UTF-8 encoding
 set nobackup         " Don't backup
@@ -6,10 +8,6 @@ set noswapfile       " Don't use swap files (.swp)
 set autoread         " Autoreload buffers
 set autowrite        " Automatically save changes before switching buffers
 syntax enable        " Enable syntax highlight
-
-" pathogen
-call pathogen#infect()
-filetype plugin indent on
 
 " History, Cursor, Rulers
 set history=50                                                               " Just remember last 50 commands
@@ -39,11 +37,12 @@ set smartcase   " ... unless they contain at least one capital letter
 " Apparence
 let base16colorspace=256
 set background=dark
-set guifont=Consolas\ bold:h14  " Font is Consolas
+set guifont=InconsolataForPowerline\ Nerd\ Font\ Medium:h14
 set linespace=2
 set visualbell
 colorscheme base16-eighties
 let g:airline_theme='base16_eighties'
+let g:airline_powerline_fonts = 1
 
 if !has('nvim')
   set antialias
