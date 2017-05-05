@@ -8,8 +8,8 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby_auto
 
 if !(tmux has-session -t "$name" 2> /dev/null); then
-  tmux start                     \;\
-    set -g set-remain-on-exit on \;\
+  tmux start                 \;\
+    set -g remain-on-exit on \;\
     new-session -d -s $name
 fi
 
