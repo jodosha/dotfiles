@@ -8,6 +8,7 @@ set noswapfile       " Don't use swap files (.swp)
 set autoread         " Autoreload buffers
 set autowrite        " Automatically save changes before switching buffers
 syntax enable        " Enable syntax highlight
+syntax on            " Syntax on for wimwiki
 
 " History, Cursor, Rulers
 set history=50                                                               " Just remember last 50 commands
@@ -60,7 +61,6 @@ endif
 " In Vim >= 7.3, also highlight columns 120+
 if exists('+colorcolumn')
   let &colorcolumn="80,".join(range(120,999),",")
-  highlight ColorColumn ctermbg=236
 endif
 
 " Splits
@@ -110,13 +110,6 @@ endfunction
 function! RunGreenbarFocusedTest(file, line)
   return SendFocusedTestToTmux(a:file, a:line)
 endfunction
-
-function! Projector()
-  colorscheme Tomorrow
-  set guifont=Menlo\ bold:h16
-endfunction
-
-map <F2> :call Projector()<CR>
 
 function! ReadDemoingSlideInformations()
   let g:demoing_file_name = str2nr(expand("%:r"))
@@ -196,6 +189,7 @@ if has('nvim')
   let g:neoterm_run_tests_bg             = 1
   let g:neoterm_raise_when_tests_fail    = 1
   let g:neoterm_close_when_tests_succeed = 1
+  nnoremap <silent><leader>tc :call neoterm#kill()<cr>
 
   " run set test lib
   " nnoremap <silent> <leader>r :call neoterm#test#run('all')<cr>
@@ -211,13 +205,28 @@ endif
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
-nmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
-xmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
-imap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
+" Enable seeing-is-believing mappings only for Ruby
+" augroup seeingIsBelievingSettings
+"   autocmd!
 
-nmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
-xmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
-imap <buffer> <F6> <Plug>(seeing-is-believing-mark)
+"   autocmd FileType ruby nmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
+"   autocmd FileType ruby xmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
+
+"   autocmd FileType ruby nmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+"   autocmd FileType ruby xmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+"   autocmd FileType ruby imap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+
+"   autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing-is-believing-run)
+"   autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing-is-believing-run)
+" augroup END
+
+" nmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
+" xmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
+" imap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
+
+" nmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
+" xmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
+" imap <buffer> <F6> <Plug>(seeing-is-believing-mark)
 
 " Go
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
