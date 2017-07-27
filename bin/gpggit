@@ -37,11 +37,27 @@ restart_agent() {
   gpgconf --kill gpg-agent
 }
 
+github_setup() {
+  gpg2 --armor --export `git config --get user.signingkey` | pbcopy
+  open https://github.com/settings/keys
+
+  echo ""
+  echo ""
+  echo ""
+  echo "=== GitHub setup"
+  echo ""
+  echo "  1. Click on New GPG key"
+  echo "  2. Paste the clipboard contents"
+  echo "  3. Click on Add GPG key"
+  echo "  4. Type your password (if asked)"
+}
+
 main() {
   setup
   generate_key
   export_key
   restart_agent
+  github_setup
 }
 
 main
