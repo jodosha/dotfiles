@@ -1,6 +1,9 @@
 # Based on https://github.com/Soliah/dotfiles
-require 'awesome_print'
-AwesomePrint.pry!
+begin
+  require 'awesome_print'
+  AwesomePrint.pry!
+rescue LoadError
+end
 
 if defined?(PryByebug)
   Pry.commands.alias_command 'c', 'continue'
