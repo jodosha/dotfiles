@@ -44,6 +44,7 @@ set visualbell
 colorscheme base16-eighties
 let g:airline_theme='base16_ocean'
 let g:airline_powerline_fonts = 1
+let g:tmuxline_theme='base16_ocean'
 
 if !has('nvim')
   set antialias
@@ -153,15 +154,11 @@ if executable('ag')
   nnoremap , :Ag<SPACE>
 endif
 
-" Ruby
-if has('nvim')
-  let g:neoterm_position = 'horizontal'
-  let g:neoterm_run_tests_bg             = 1
-  let g:neoterm_raise_when_tests_fail    = 1
-  let g:neoterm_close_when_tests_succeed = 1
-  nnoremap <silent><leader>tc :call neoterm#kill()<cr>
-endif
+nmap <silent> <leader>re :TestNearest<CR>
+nmap <silent> <leader>r :TestFile<CR>
+nmap <silent> <leader>rr :TestSuite<CR>
 
+" Ruby
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
 " Automatically fold comments in Ruby files
@@ -170,7 +167,7 @@ autocmd FileType ruby,eruby
        \ set foldexpr=getline(v:lnum)=~'^\\s*#'
 
 " Go
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['go', 'govet', 'golint', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 let g:go_highlight_functions = 1
