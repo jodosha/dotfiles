@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+file=$1
+
+fix_carriage_return() {
+  sed -i -e 's/\\r\\n//g' $file
+}
+
+fix_quotes() {
+  sed -i -e 's/\\"/"/g' $file
+}
+
+fix_formatting() {
+  xmllint --output $file --format $file
+}
+
+main() {
+  fix_carriage_return
+  fix_quotes
+  fix_formatting
+}
+
+main
