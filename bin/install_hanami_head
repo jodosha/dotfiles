@@ -3,8 +3,8 @@ set -euo pipefail
 IFS=$'\n\t'
 
 root=/Users/luca/Code/hanami
-declare -a directories=(utils validations router view controller mailer helpers assets hanami)
-declare -a gems=(hanami-utils hanami-validations hanami-router hanami-model hanami-view hanami-controller hanami-mailer hanami-helpers hanami-assets hanami)
+declare -a directories=(utils validations router controller view helpers mailer cli assets model hanami)
+declare -a gems=(hanami-utils hanami-validations hanami-router hanami-model hanami-view hanami-controller hanami-mailer hanami-cli hanami-helpers hanami-assets hanami)
 
 uninstall_gems() {
   echo "== Uninstalling gems.."
