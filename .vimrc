@@ -91,26 +91,7 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-let g:turbux_command_prefix = 'greenbar' "
-
-" Run RSpec examples. Loosely inspired by: https://gist.github.com/1062296
-function! RunSpec(args)
-  let cmd = "bundle exec rspec " . @% . a:args
-  execute ":! echo " . cmd . " && " . cmd
-endfunction
-
-map <silent> <leader>r :call RunSpec("") <CR>
-map <silent> <leader>re :call RunSpec(":" . line('.')) <CR>
-
-" Greenbar
-function! RunGreenbarTest(file)
-  return SendTestToTmux(a:file)
-endfunction
-
-function! RunGreenbarFocusedTest(file, line)
-  return SendFocusedTestToTmux(a:file, a:line)
-endfunction
-
+" Demo
 function! ReadDemoingSlideInformations()
   let g:demoing_file_name = str2nr(expand("%:r"))
   let g:demoing_file_type = "." . expand("%:e")
@@ -151,17 +132,6 @@ endfunction
 
 map <silent> <Leader>tc :call Carousel()<cr>
 
-" Powerline
-" let g:tmuxline_powerline_separators = 1
-" let g:tmuxline_preset = {
-"       \'a'    : '#S',
-"       \'b'    : '#W',
-"       \'win'  : '#I #W',
-"       \'cwin' : '#I #W',
-"       \'z'    : '#H'}
-
-" let g:airline_powerline_fonts = 1
-
 " The Silver Searcher
 " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
 if executable('ag')
@@ -190,43 +160,9 @@ if has('nvim')
   let g:neoterm_raise_when_tests_fail    = 1
   let g:neoterm_close_when_tests_succeed = 1
   nnoremap <silent><leader>tc :call neoterm#kill()<cr>
-
-  " run set test lib
-  " nnoremap <silent> <leader>r :call neoterm#test#run('all')<cr>
-  " nnoremap <silent> <leader>re :call neoterm#test#run('file')<cr>
-  " nnoremap <silent> <leader>rew :call neoterm#test#run('current')<cr>
-  " nnoremap <silent> <leader>rr :call neoterm#test#rerun()<cr>
-  " nnoremap <silent> <leader>rc :call neoterm#close()<cr>
-
-  " set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
-  " set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
-  " set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
 endif
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-
-" Enable seeing-is-believing mappings only for Ruby
-" augroup seeingIsBelievingSettings
-"   autocmd!
-
-"   autocmd FileType ruby nmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
-"   autocmd FileType ruby xmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
-
-"   autocmd FileType ruby nmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
-"   autocmd FileType ruby xmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
-"   autocmd FileType ruby imap <buffer> <F4> <Plug>(seeing-is-believing-mark)
-
-"   autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing-is-believing-run)
-"   autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing-is-believing-run)
-" augroup END
-
-" nmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
-" xmap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
-" imap <buffer> <F5> <Plug>(seeing-is-believing-mark-and-run)
-
-" nmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
-" xmap <buffer> <F6> <Plug>(seeing-is-believing-mark)
-" imap <buffer> <F6> <Plug>(seeing-is-believing-mark)
 
 " Go
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
