@@ -34,11 +34,6 @@ source $HOME/.dotfiles/aliases.sh
 source $HOME/Dropbox/aliases.sh
 source $HOME/Dropbox/secrets.sh
 
-# export CFLAGS="-g -02"
-# export CC="/usr/local/bin/gcc-4.8"
-# export GCC="/usr/local/bin/gcc-4.8"
-# export CPP="/usr/local/bin/cpp-4.8"
-# export CXX="/usr/local/bin/g++-4.8"
 export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color"
 
@@ -59,20 +54,9 @@ export EDITOR="nvim"
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GPG_TTY=$(tty)
 
-# export RUBY_GC_HEAP_INIT_SLOTS=1000000
-# export RUBY_HEAP_SLOTS_INCREMENT=1000000
-# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-# export RUBY_GC_MALLOC_LIMIT=100000000
-# export RUBY_HEAP_FREE_MIN=500000
-
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby_auto
-# chruby $(cat $HOME/.ruby-version)
-
-# eval "$(chef shell-init zsh)"
-# eval "$(/Users/luca/.chefvm/bin/chefvm init -)"
-# eval "$(docker-machine env dev)"
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
@@ -80,3 +64,4 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # added by travis gem
 [ -f /Users/luca/.travis/travis.sh ] && source /Users/luca/.travis/travis.sh
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+eval "$(direnv hook zsh)"

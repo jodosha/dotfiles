@@ -1,7 +1,7 @@
 [user]
   name = Luca Guidi
   email = me@lucaguidi.com
-	signingkey = 5FD0DE08571E7D45
+	signingkey = 387E81B010C77B96
 [color]
   branch = auto
   diff = auto
@@ -26,7 +26,7 @@
 [heroku]
 	account = personal
 [gpg]
-	program = /usr/local/bin/gpg2
+	program = /usr/local/bin/gpg
 [url "ssh://git@heroku.com/"]
 	insteadOf = https://git.heroku.com/
 [commit]

@@ -6,7 +6,7 @@ setup() {
   # Export this ENV var in your .bashrc or .zshrc
   export GPG_TTY=$(tty)
 
-  git config --global gpg.program `which gpg2`
+  git config --global gpg.program `which gpg`
   git config --global commit.gpgsign true
 }
 
@@ -23,12 +23,12 @@ generate_key() {
      %commit
      %echo done
 EOF
-  gpg2 --batch --gen-key .gpgconfig
+  gpg --batch --gen-key .gpgconfig
   rm .gpgconfig
 }
 
 export_key() {
-  signingkey=$(gpg2 --list-secret-keys --keyid-format LONG "`git config --get user.email`" | grep sec | awk '{print $2}' | awk -F'/' '{print $2}' | tail -n 1)
+  signingkey=$(gpg --list-secret-keys --keyid-format LONG "`git config --get user.email`" | grep sec | awk '{print $2}' | awk -F'/' '{print $2}' | tail -n 1)
   git config --global user.signingkey $signingkey
 }
 
@@ -38,7 +38,7 @@ restart_agent() {
 }
 
 github_setup() {
-  gpg2 --armor --export `git config --get user.signingkey` | pbcopy
+  gpg --armor --export `git config --get user.signingkey` | pbcopy
   open https://github.com/settings/keys
 
   echo ""
