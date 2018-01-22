@@ -38,7 +38,7 @@ set smartcase   " ... unless they contain at least one capital letter
 " Apparence
 let base16colorspace=256
 set background=dark
-set guifont=InconsolataForPowerline\ Nerd\ Font\ Medium:h14
+set guifont=InconsolataForPowerline\ Nerd\ Font\ Medium:h18
 set linespace=2
 set visualbell
 colorscheme base16-eighties
