@@ -164,6 +164,11 @@ endif
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
+" Automatically fold comments in Ruby files
+autocmd FileType ruby,eruby
+       \ set foldmethod=expr |
+       \ set foldexpr=getline(v:lnum)=~'^\\s*#'
+
 " Go
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
