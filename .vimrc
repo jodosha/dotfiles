@@ -42,7 +42,7 @@ set guifont=InconsolataForPowerline\ Nerd\ Font\ Medium:h18
 set linespace=2
 set visualbell
 colorscheme base16-eighties
-let g:airline_theme='base16_eighties'
+let g:airline_theme='base16_ocean'
 let g:airline_powerline_fonts = 1
 
 if !has('nvim')
