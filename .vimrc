@@ -171,7 +171,7 @@ function! RubocopAutocorrect()
   call SyntasticCheck()
 endfunction
 
-map <silent> <Leader>rac :call RubocopAutocorrect()<cr>
+map <silent> <Leader>cop :call RubocopAutocorrect()<cr>
 
 " Go
 let g:syntastic_go_checkers = ['go', 'govet', 'golint', 'errcheck']
