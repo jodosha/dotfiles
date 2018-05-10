@@ -1,7 +1,7 @@
 [user]
   name = Luca Guidi
   email = me@lucaguidi.com
-	signingkey = 7A1A47BDD807E694
+	signingkey = D25A41F542432590
 [color]
   branch = auto
   diff = auto
