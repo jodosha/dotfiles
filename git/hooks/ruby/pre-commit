@@ -1,0 +1,3 @@
+#!/bin/bash
+
+git status -s | grep -E 'A|M|R' | awk '{print $2}' | xargs rubocop --display-cop-names --extra-details --parallel --force-exclusion
