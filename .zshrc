@@ -49,7 +49,7 @@ export PGDATA="/usr/local/var/postgres9.5"
 
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/luca/Dropbox/google-vision.json"
 
-export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:$RUST_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/opt/curl/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:$RUST_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="nvim"
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GPG_TTY=$(tty)
