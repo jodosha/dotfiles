@@ -1,7 +1,7 @@
 [user]
   name = Luca Guidi
   email = me@lucaguidi.com
-	signingkey = 0FBB082B7161899A
+	signingkey = B962ADFE00EBBD11
 [color]
   branch = auto
   diff = auto
@@ -31,3 +31,8 @@
 	insteadOf = https://git.heroku.com/
 [commit]
 	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
