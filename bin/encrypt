@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+directory=$1
+compressed=$directory.tar.bz2
+
+setup() {
+  # Export this ENV var in your .bashrc or .zshrc
+  export GPG_TTY=$(tty)
+}
+
+compress() {
+  tar -cvjSf $compressed $directory
+}
+
+enkrypt() {
+  gpg -c $compressed
+}
+
+teardown() {
+  rm $compressed
+}
+
+main() {
+  setup
+  compress
+  enkrypt
+  teardown
+}
+
+main
