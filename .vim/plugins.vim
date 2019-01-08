@@ -32,6 +32,7 @@ Plugin 'edkolev/tmuxline.vim' " ???
 Plugin 'fatih/vim-go'
 Plugin 'jodosha/vim-godebug'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'elixir-editors/vim-elixir'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
