@@ -6,6 +6,7 @@ file=$1
 
 fix_carriage_return() {
   sed -i -e 's/\\r\\n//g' $file
+  sed -i -e 's/\\r//g' $file
 }
 
 fix_quotes() {
