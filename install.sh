@@ -25,6 +25,9 @@ echo "Installing GCC"
   brew install gcc49
   brew install libtool libyaml libksba
 
+echo "Installing cURL"
+  brew install curl-openssl
+
 echo "Installing OpenSSL"
   brew install openssl
 
