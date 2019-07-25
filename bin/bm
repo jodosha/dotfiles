@@ -10,6 +10,7 @@ require "benchmark/ips"
 Benchmark.ips do |x|
   x.report("") {}
   x.report("") {}
+  x.compare!
 end
 
 __END__
