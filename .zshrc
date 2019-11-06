@@ -44,12 +44,9 @@ export OPENSSL_ROOT_DIR=$(brew --prefix openssl)
 export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/Code/go"
 
-export RUST_HOME="/usr/local/Cellar/rust/1.5.0"
-export PGDATA="/usr/local/var/postgres9.5"
-
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/luca/Dropbox/google-vision.json"
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/opt/curl-openssl/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:/usr/local/opt/postgresql@10/bin:$RUST_HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
+export PATH="$HOME/bin:$HOME/Dropbox/scripts:/usr/local/bin:/usr/local/opt/curl-openssl/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:/Applications/Docker.app/Contents/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="nvim"
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GPG_TTY=$(tty)
@@ -64,6 +61,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # added by travis gem
 [ -f /Users/luca/.travis/travis.sh ] && source /Users/luca/.travis/travis.sh
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-eval "$(direnv hook zsh)"
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# eval "$(direnv hook zsh)"
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
