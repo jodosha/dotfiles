@@ -158,6 +158,9 @@ nmap <silent> <leader>re :TestNearest<CR>
 nmap <silent> <leader>r :TestFile<CR>
 nmap <silent> <leader>rr :TestSuite<CR>
 
+" Run Ruby script in NeoVim terminal emulator
+map <Leader>rr :w<CR>:split \| terminal ruby %<CR>:startinsert<CR>
+
 " Ruby
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
