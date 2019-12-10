@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-declare -a gems=(hanami-utils hanami-validations hanami-router hanami-model hanami-view hanami-controller hanami-mailer hanami-cli hanami-helpers hanami-assets hanami-events hanami)
+declare -a gems=(hanami-utils hanami-validations hanami-router hanami-model hanami-view hanami-controller hanami-mailer hanami-helpers hanami-assets hanami-events hanami)
 
 uninstall_gems() {
   echo "== Uninstalling gems.."
