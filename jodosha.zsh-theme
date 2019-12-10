@@ -15,4 +15,4 @@ current_directory() {
   echo $(basename $(pwd) | sed -e "s,^$(whoami),~,")
 }
 
-PROMPT='$(git_custom_status)%{$fg[cyan]%} $(current_directory)%{$reset_color%} ➜ '
+PROMPT='$(git_custom_status)%{$fg[cyan]%}%{$reset_color%}⚡ '
