@@ -156,13 +156,15 @@ endif
 
 nmap <silent> <leader>re :TestNearest<CR>
 nmap <silent> <leader>r :TestFile<CR>
-nmap <silent> <leader>rr :TestSuite<CR>
-
-" Run Ruby script in NeoVim terminal emulator
-map <Leader>rr :w<CR>:split \| terminal ruby %<CR>:startinsert<CR>
+nmap <silent> <leader>rs :TestSuite<CR>
 
 " Ruby
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+if has('nvim')
+  let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+
+  " Run Ruby script in NeoVim terminal emulator
+  map <Leader>rr :w<CR>:split \| terminal ruby %<CR>:startinsert<CR>
+endif
 
 " Automatically fold comments in Ruby files
 autocmd FileType ruby,eruby
