@@ -34,6 +34,7 @@ Plugin 'jodosha/vim-godebug'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'slim-template/vim-slim.git'
+Plugin 'jparise/vim-graphql'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
