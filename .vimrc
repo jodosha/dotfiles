@@ -41,10 +41,15 @@ set background=dark
 set guifont=InconsolataForPowerline\ Nerd\ Font\ Medium:h18
 set linespace=2
 set visualbell
-colorscheme base16-eighties
-let g:airline_theme='base16_ocean'
+colorscheme base16-dracula
+let g:airline_theme='base16_eighties'
 let g:airline_powerline_fonts = 1
-let g:tmuxline_theme='base16_ocean'
+let g:tmuxline_theme='base16_eighties'
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 if !has('nvim')
   set antialias
