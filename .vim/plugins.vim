@@ -35,6 +35,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'jparise/vim-graphql'
+Plugin 'pechorin/any-jump.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
