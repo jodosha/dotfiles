@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby -w
+# frozen_string_literal: true
+
+require "ostruct"
+require "pathname"
+require "fileutils"
+
+RUBIES = File.join(ENV["HOME"], ".rubies", "*")
+RUBY_GEM_HOME = Pathname.new(File.join(ENV["HOME"], ".gem"))
+RUBY_SRC = Pathname.new(File.join(ENV["HOME"], "src"))
+
+grouped = Dir.glob(RUBIES).each_with_object({}) do |directory, result|
+  ruby_version = File.basename(directory)
+  ruby_engine = ruby_version.scan(/\A[[:alnum:]]*/).first
+  ruby_complete_version = ruby_version.scan(/[\d]{1,}/).join(".")
+  ruby_minor_version = ruby_version.scan(/\A[[:alnum:]]*\-\d{1,}\.\d{1,}/).first
+
+  result[ruby_minor_version] ||= []
+  result[ruby_minor_version].push(OpenStruct.new(engine: ruby_engine, ruby_version: ruby_version, version: ruby_complete_version, dir: Pathname.new(directory)))
+end
+
+grouped.each do |_, rubies|
+  rubies.sort_by!(&:version)
+  rubies.pop
+
+  rubies.each do |ruby_installation|
+    puts "Removing #{ruby_installation.ruby_version} #{ruby_installation.engine} #{ruby_installation.version}"
+
+    # Examples:
+    #   "$HOME/.gem/ruby/2.7.0"
+    #   "cd $HOME/src/ruby-2.6.3/ && make uninstall"
+
+    src = RUBY_SRC.join("#{ruby_installation.engine}-#{ruby_installation.version}")
+    if src.directory?
+      Dir.chdir(src) do
+        system "make uninstall"
+      end
+    end
+
+    gem_home = RUBY_GEM_HOME.join(ruby_installation.engine, ruby_installation.version)
+    FileUtils.rm_rf(gem_home) if gem_home.directory?
+    FileUtils.rm_rf(ruby_installation.dir) if ruby_installation.dir.directory?
+  end
+end
