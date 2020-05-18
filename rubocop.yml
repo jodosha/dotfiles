@@ -11,6 +11,8 @@ AllCops:
   TargetRubyVersion: 2.7
 Bundler/OrderedGems:
   Enabled: false
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
 Layout/LineLength:
   Enabled: false
 Layout/SpaceAroundMethodCallOperator:
@@ -46,6 +48,8 @@ Style/RaiseArgs:
   Enabled: false
 Style/RegexpLiteral:
   Enabled: false
+Style/SlicingWithRange:
+  Enabled: true
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
