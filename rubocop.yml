@@ -11,6 +11,8 @@ AllCops:
   TargetRubyVersion: 2.7
 Bundler/OrderedGems:
   Enabled: false
+Gemspec/OrderedDependencies:
+  Enabled: false
 Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: true
 Layout/LineLength:
