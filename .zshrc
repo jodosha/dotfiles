@@ -61,7 +61,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # added by travis gem
 [ -f /Users/luca/.travis/travis.sh ] && source /Users/luca/.travis/travis.sh
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-# eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
