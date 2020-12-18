@@ -183,6 +183,11 @@ endfunction
 
 map <silent> <Leader>cop :call RubocopAutocorrect()<cr>
 
+function! FormatJSON()
+  execute "%!python -m json.tool"
+endfunction
+map <silent> <Leader>json :call FormatJSON()<cr>
+
 " Go
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:python_host_prog = '/usr/local/bin/python2'
