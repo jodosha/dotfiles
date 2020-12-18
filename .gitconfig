@@ -1,7 +1,7 @@
 [user]
   name = Luca Guidi
   email = me@lucaguidi.com
-	signingkey = C218AE1F4AEA2411
+	signingkey = FEBD9839576C6191
 [color]
   branch = auto
   diff = auto
@@ -36,3 +36,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential]
+	helper = osxkeychain
