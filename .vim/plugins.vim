@@ -32,10 +32,13 @@ Plugin 'edkolev/tmuxline.vim' " ???
 Plugin 'fatih/vim-go'
 Plugin 'jodosha/vim-godebug'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'elixir-editors/vim-elixir'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'jparise/vim-graphql'
 Plugin 'pechorin/any-jump.vim'
+Plugin 'tyru/open-browser.vim' " Needed by plantuml-previewer
+Plugin 'aklt/plantuml-syntax'
+Plugin 'weirongxu/plantuml-previewer.vim'
+Plugin 'dracula/vim', { 'as': 'dracula' }
 
 call vundle#end()            " required
 filetype plugin indent on    " required

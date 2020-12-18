@@ -42,9 +42,9 @@ set guifont=InconsolataForPowerline\ Nerd\ Font\ Medium:h18
 set linespace=2
 set visualbell
 colorscheme base16-dracula
-let g:airline_theme='base16_eighties'
+let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
-let g:tmuxline_theme='base16_eighties'
+let g:tmuxline_theme='base16_dracula'
 
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
