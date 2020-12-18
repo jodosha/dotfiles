@@ -9,6 +9,7 @@ AllCops:
   DisplayStyleGuide: true
   ExtraDetails: false
   TargetRubyVersion: 2.7
+  NewCops: enable
 Bundler/OrderedGems:
   Enabled: false
 Gemspec/OrderedDependencies:
