@@ -1,7 +1,7 @@
 [user]
   name = Luca Guidi
   email = me@lucaguidi.com
-	signingkey = FEBD9839576C6191
+	signingkey = 7C6006DB2E58CEB8
 [color]
   branch = auto
   diff = auto
@@ -9,7 +9,7 @@
   status = auto
 [core]
   editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
-	excludesfile = /Users/luca/.gitignore_global
+	excludesfile = /Users/jodosha/.gitignore_global
 [merge]
   tool = opendiff
 [push]
@@ -38,3 +38,5 @@
 	required = true
 [credential]
 	helper = osxkeychain
+[init]
+	defaultBranch = main
