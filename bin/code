@@ -7,12 +7,24 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby_auto
 
+session_exists() {
+  tmux has-session -t "=$name"
+}
+
+tmux source-file "$HOME/.tmux.conf"
+
 if !(tmux has-session -t "$name" 2> /dev/null); then
   tmux start                 \;\
     set -g remain-on-exit on \;\
     new-session -d -s $name
+
+  if [[ -f "$HOME/.tmux/profiles/$name.tmuxrc" ]]; then
+    tmux source-file "$HOME/.tmux/profiles/$name.tmuxrc"
+  elif [[ -f ".tmuxrc" ]]; then
+    tmux source-file ".tmuxrc"
+  elif [[ -f "$HOME/.tmuxrc" ]]; then
+    tmux source-file "$HOME/.tmuxrc"
+  fi
 fi
 
-tmux source-file "$HOME/.tmux.conf"
-tmux source-file "$HOME/.tmux/profiles/$name.tmuxrc"
 tmux attach -t $name

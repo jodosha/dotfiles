@@ -42,6 +42,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
+  Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set nocompatible     " Vim behavior, not Vi.

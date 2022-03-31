@@ -1,0 +1,3 @@
+send-keys -t1 "nvim" C-m
+new-window -n "shell"
+selectp -t1
