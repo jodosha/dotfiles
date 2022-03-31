@@ -7,7 +7,9 @@
 # brew bundle
 
 brew 'coreutils'
+brew 'cmake'
 brew 'automake'
+brew 'openssl@1.1'
 
 brew 'bind'
 brew 'gnupg2'
@@ -36,6 +38,7 @@ brew 'python3'
 
 brew 'neovim'
 brew 'tmux'
+brew 'watchman'
 
 brew 'highlight'
 brew 'graphviz'
@@ -52,3 +55,6 @@ cask 'google-cloud-sdk'
 cask 'phantomjs'
 
 brew 'lame'
+
+tap 'homebrew/cask-versions'
+brew 'java11'
