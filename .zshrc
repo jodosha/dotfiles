@@ -24,7 +24,7 @@ ZSH_THEME="jodosha"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(iterm2 zsh-autosuggestions git git-flow extract fancy-ctrl-z brew osx ruby chruby gem bundler golang postgres redis-cli docker tmux)
+plugins=(iterm2 zsh-autosuggestions git git-flow extract fancy-ctrl-z brew macos ruby chruby gem bundler golang postgres redis-cli docker tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,16 +37,17 @@ source $HOME/Dropbox/secrets.sh
 export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color"
 
-# export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-export OPENSSL_ROOT_DIR=$(brew --prefix openssl)
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export DYLD_LIBRARY_PATH="/usr/local/Cellar/openssl@1.1/1.1.1i/lib:$DYLD_LIBRARY_PATH"
 
 export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/Code/go"
 
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/luca/Dropbox/google-vision.json"
+# export GOOGLE_APPLICATION_CREDENTIALS="/Users/luca/Dropbox/google-vision.json"
 
-export PATH="$HOME/bin:$HOME/Dropbox/scripts:/usr/local/bin:/usr/local/opt/curl-openssl/bin:$JAVA_HOME/bin:$GOROOT/bin:$GOPATH/bin:/Applications/Docker.app/Contents/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
+export PATH="$HOME/bin:$HOME/Dropbox/scripts:/usr/local/bin:/usr/local/opt/curl-openssl/bin:/usr/local/opt/openjdk@11/bin:$GOROOT/bin:$GOPATH/bin:/Applications/Docker.app/Contents/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
 export EDITOR="nvim"
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GPG_TTY=$(tty)
@@ -55,13 +56,18 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby_auto
 
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-# added by travis gem
-[ -f /Users/luca/.travis/travis.sh ] && source /Users/luca/.travis/travis.sh
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 eval "$(direnv hook zsh)"
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
