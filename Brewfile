@@ -10,6 +10,7 @@ brew 'coreutils'
 brew 'cmake'
 brew 'automake'
 brew 'openssl@1.1'
+brew 'llvm'
 
 brew 'bind'
 brew 'gnupg2'
