@@ -5,6 +5,24 @@ IFS=$'\n\t'
 root=~/Code/hanami
 declare -a directories=(utils validations router controller cli rspec hanami)
 declare -a gems=(hanami-utils hanami-validations hanami-router hanami-controller hanami-cli hanami-rspec hanami)
+declare -a install_from_main_branch=false
+
+print_usage() {
+  local script=`basename "$0"`
+  echo "$script    # uninstall and reinstall hanami gems from local repositories"
+  echo "$script -m # uninstall and reinstall hanami gems from local repositories using main branch"
+  echo "$script -h # print this help"
+}
+
+while getopts 'mh' flag; do
+  case "${flag}" in
+    m) install_from_main_branch=true ;;
+    h) print_usage
+       exit 0;;
+    *) print_usage
+       exit 1 ;;
+  esac
+done
 
 uninstall_gems() {
   echo "== Uninstalling gems.."
@@ -19,6 +37,12 @@ install_gems() {
   for directory in "${directories[@]}"
   do
     pushd $root/$directory > /dev/null
+
+    if $install_from_main_branch; then
+      git checkout main
+      git pull origin main
+    fi
+
     bundle install > /dev/null
     bundle exec rake install
     echo "Installed $directory"
