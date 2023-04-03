@@ -1,14 +1,14 @@
 [user]
   name = Luca Guidi
   email = me@lucaguidi.com
-	signingkey = 06BB0708AA16384A
+	signingkey = C0D997E4C1C3F815
 [color]
   branch = auto
   diff = auto
   interactive = auto
   status = auto
 [core]
-  editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
+  editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 lvim"
 	excludesfile = /Users/jodosha/.gitignore_global
 [merge]
   tool = opendiff

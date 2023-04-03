@@ -48,7 +48,7 @@ export GOPATH="$HOME/Code/go"
 # export GOOGLE_APPLICATION_CREDENTIALS="/Users/luca/Dropbox/google-vision.json"
 
 export PATH="$HOME/bin:$HOME/Dropbox/scripts:/usr/local/bin:/usr/local/opt/curl-openssl/bin:/usr/local/opt/openjdk@11/bin:$GOROOT/bin:$GOPATH/bin:/Applications/Docker.app/Contents/Resources/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/heroku/bin"
-export EDITOR="nvim"
+export EDITOR="lvim"
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GPG_TTY=$(tty)
 
@@ -59,14 +59,13 @@ chruby_auto
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
-
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 eval "$(direnv hook zsh)"
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
+export PATH="/Users/jodosha/.local/bin:$PATH"
+source "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
