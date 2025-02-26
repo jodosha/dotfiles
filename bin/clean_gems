@@ -1,9 +1,0 @@
-#!/bin/bash
-
-read -p "Are you sure? ($(ruby -v)) " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  gem uninstall -ax --force
-  gem install bundler
-fi

@@ -3,9 +3,6 @@
 name=$1
 dir="$HOME/Code/$name"
 cd $dir
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby_auto
 
 session_exists() {
   tmux has-session -t "=$name"
