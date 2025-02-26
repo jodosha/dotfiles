@@ -1,3 +1,0 @@
-send-keys -t1 "lvim" C-m
-new-window -n "shell"
-selectp -t1
