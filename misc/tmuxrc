@@ -1,0 +1,4 @@
+send-keys -t1 "nvim" C-m
+new-window -n "devenv shell"
+new-window -n "devenv up"
+selectp -t1

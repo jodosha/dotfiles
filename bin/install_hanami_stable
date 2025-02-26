@@ -1,9 +1,0 @@
-#!/bin/bash
-
-read -p "Are you sure? ($(ruby -v)) " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  gem uninstall -ax --force hanami hanami-assets hanami-mailer hanami-validations hanami-router hanami-model hanami-view hanami-controller hanami-utils
-  gem install hanami hanami-model
-fi
