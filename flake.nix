@@ -54,7 +54,7 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       # Touch ID for sudo password
-      security.pam.enableSudoTouchIdAuth = true;
+      security.pam.services.sudo_local.touchIdAuth = true;
 
       # For Home Manager
       users.users.jodosha.home = "/Users/jodosha";
