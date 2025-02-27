@@ -63,6 +63,10 @@
       gd="git diff";
       grev="git diff master";
       ggpull="git pull --rebase";
+
+      # Ruby
+      be="bundle exec";
+      ber="bundle exec rake";
     };
 
     oh-my-zsh = {
