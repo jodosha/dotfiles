@@ -20,6 +20,7 @@
       environment.systemPackages =
         [
           pkgs.colima
+          pkgs.docker
         ];
 
       # Necessary for using flakes on this system.
