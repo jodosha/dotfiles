@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Hard-code your container and user
+CONTAINER="dxup"
+USER="dxup"
+
+# Capture every argument passed to the script as a single command string
+COMMAND="$@"
+
+# Execute the command in the Incus container as the specified user
+incus exec "$CONTAINER" -- su -l "$USER" -c "$COMMAND"
