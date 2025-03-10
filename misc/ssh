@@ -1,0 +1,4 @@
+Include /Users/jodosha/.colima/ssh_config
+
+Host *.github.com
+  IdentityFile ~/.ssh/github

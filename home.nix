@@ -23,6 +23,7 @@
 
     # https://github.com/nix-community/home-manager/issues/761
     file.".cache/oh-my-zsh/themes/jodosha.zsh-theme".source = ./misc/omz.zsh-theme;
+    file.".ssh/config".source = ./misc/ssh;
     file.".config/ghostty/config".source = ./misc/ghostty;
     file.".tmuxrc".source = ./misc/tmuxrc;
 
