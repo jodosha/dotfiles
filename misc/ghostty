@@ -1,0 +1,11 @@
+term = "xterm-256color"
+theme = tokyonight
+font-family = "Hack Nerd Font Propo"
+font-size = 14
+font-thicken = true
+background-opacity = 0.9
+background-blur = 10
+macos-titlebar-style = transparent
+window-colorspace = "display-p3"
+macos-titlebar-proxy-icon = hidden
+title = " "
