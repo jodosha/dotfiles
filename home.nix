@@ -16,7 +16,7 @@
       pkgs.neovim
       pkgs.ripgrep
       pkgs.luarocks
-      pkgs.nerd-fonts._0xproto
+      pkgs.nerd-fonts.hack
       pkgs.tmux
       pkgs.devenv
     ];
