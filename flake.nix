@@ -26,11 +26,37 @@
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
-      # Allows to build Linux packages.
-      nix.linux-builder.enable = true;
-
-      # Suggested by `devenv`
+      # Suggested by `devenv` for remote builders
       nix.settings.trusted-users = ["root" "jodosha"];
+
+      # https://nixos.org/manual/nixpkgs/unstable/#sec-darwin-builder
+      #
+      # Run with:
+      #
+      #   ```
+      #   $ nix run nixpkgs#darwin.linux-builder
+      #   ```
+      nix.settings.builders = "ssh-ng://builder@linux-builder aarch64-linux /etc/nix/builder_ed25519 4 - - - c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUpCV2N4Yi9CbGFxdDFhdU90RStGOFFVV3JVb3RpQzVxQkorVXVFV2RWQ2Igcm9vdEBuaXhvcwo=";
+
+      # Not strictly necessary, it reduces disk utilization
+      nix.settings.builders-use-substitutes = true;
+
+      # Allows to build Linux packages.
+      nix.linux-builder = {
+        enable = true;
+        ephemeral = true;
+        maxJobs = 4;
+        config = {
+          virtualisation = {
+            darwin-builder = {
+              diskSize = 40 * 1024;
+              memorySize = 8 * 1024;
+              hostPort = 22022;
+            };
+            cores = 6;
+          };
+        };
+      };
 
       # Pre-built binaries for `devenv`
       nix.extraOptions = ''
