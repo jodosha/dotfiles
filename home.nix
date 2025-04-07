@@ -12,6 +12,7 @@
       pkgs.gnupg
       pkgs.oh-my-zsh
       pkgs.xz
+      pkgs.tree
       pkgs.git
       pkgs.gh
       pkgs.neovim
