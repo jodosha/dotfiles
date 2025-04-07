@@ -9,6 +9,7 @@
     stateVersion = "24.11";
 
     packages = [
+      pkgs.binutils
       pkgs.gnupg
       pkgs.oh-my-zsh
       pkgs.xz
