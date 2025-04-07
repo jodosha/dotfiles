@@ -13,6 +13,7 @@
       pkgs.oh-my-zsh
       pkgs.xz
       pkgs.tree
+      pkgs.squashfsTools
       pkgs.git
       pkgs.gh
       pkgs.neovim
