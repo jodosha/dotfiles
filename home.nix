@@ -11,6 +11,7 @@
     packages = [
       pkgs.gnupg
       pkgs.oh-my-zsh
+      pkgs.xz
       pkgs.git
       pkgs.gh
       pkgs.neovim
