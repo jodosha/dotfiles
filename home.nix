@@ -23,6 +23,7 @@
       pkgs.nerd-fonts.hack
       pkgs.tmux
       pkgs.devenv
+      pkgs.nodejs_22
     ];
 
     # https://github.com/nix-community/home-manager/issues/761
