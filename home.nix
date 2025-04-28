@@ -21,6 +21,7 @@
       pkgs.ripgrep
       pkgs.luarocks
       pkgs.nerd-fonts.hack
+      pkgs._1password-cli
       pkgs.tmux
       pkgs.devenv
       pkgs.nodejs_22
