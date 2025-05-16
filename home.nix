@@ -58,6 +58,7 @@
       ll = "ls -l";
       dnsflush="dscacheutil -flushcache";
       rebuild="darwin-rebuild switch";
+      nix-remote-builder="nix run nixpkgs#darwin.linux-builder";
 
       # Git
       gp="git push origin $(current_branch)";
