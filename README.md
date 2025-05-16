@@ -26,3 +26,11 @@ cd /etc/nix-darwin
 nix run nix-darwin/master#darwin-rebuild -- switch
 darwin-rebuild switch
 ```
+
+### Update
+
+```bash
+nix-remote-builder
+nix flake update
+rebuild
+```
