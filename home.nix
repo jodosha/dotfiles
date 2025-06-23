@@ -96,6 +96,7 @@
     ignores = [
       "*devenv*"
       ".direnv"
+      ".claude"
       ".pre-commit-config.yaml"
     ];
     extraConfig = {
