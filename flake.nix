@@ -81,7 +81,10 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       # Touch ID for sudo password
-      security.pam.services.sudo_local.touchIdAuth = true;
+      security.pam.services.sudo_local = {
+        touchIdAuth = true;
+        reattach = true; # needed for Tmux sessions
+      };
 
       # For Home Manager
       users.users.jodosha.home = "/Users/jodosha";
