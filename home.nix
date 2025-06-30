@@ -58,7 +58,8 @@
     shellAliases = {
       ll = "ls -l";
       dnsflush="dscacheutil -flushcache";
-      rebuild="darwin-rebuild switch";
+      rebuild="sudo darwin-rebuild switch";
+      nix-upgrade="nix flake update && sudo darwin-rebuild switch --flake";
       nix-remote-builder="nix run nixpkgs#darwin.linux-builder";
 
       # Git
