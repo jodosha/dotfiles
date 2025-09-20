@@ -19,6 +19,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
+          pkgs.podman
           pkgs.colima
           pkgs.docker
         ];
