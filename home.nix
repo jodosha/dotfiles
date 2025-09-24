@@ -17,6 +17,8 @@
       pkgs.squashfsTools
       pkgs.git
       pkgs.gh
+      pkgs.bc
+      pkgs.jq
       pkgs.neovim
       pkgs.ripgrep
       pkgs.luarocks
@@ -141,7 +143,7 @@
         extraConfig = ''
           set -g @tokyo-night-tmux_transparent 0
           set -g @tokyo-night-tmux_show_datetime 0
-          set -g @tokyo-night-tmux_show_git 0
+          set -g @tokyo-night-tmux_show_git 1
           set -g @tokyo-night-tmux_show_wbg 0
         '';
       }
