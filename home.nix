@@ -29,6 +29,7 @@
       pkgs.nodejs_22
       pkgs.claude-code
       pkgs.mkcert
+      pkgs.uv
     ];
 
     # https://github.com/nix-community/home-manager/issues/761
