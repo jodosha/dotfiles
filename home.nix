@@ -96,15 +96,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Luca Guidi";
-    userEmail = "me@lucaguidi.com";
-    ignores = [
-      "*devenv*"
-      ".direnv"
-      ".claude"
-      ".pre-commit-config.yaml"
-    ];
-    extraConfig = {
+
+    settings = {
+      user = {
+        name = "Luca Guidi";
+        email = "me@lucaguidi.com";
+      };
       core = {
         editor = "nvim";
       };
@@ -119,6 +116,13 @@
         key = "/Users/jodosha/.ssh/github";
       };
     };
+
+    ignores = [
+      "*devenv*"
+      ".direnv"
+      ".claude"
+      ".pre-commit-config.yaml"
+    ];
   };
 
   programs.gh = {
