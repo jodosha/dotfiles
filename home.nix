@@ -30,6 +30,9 @@
       pkgs.claude-code
       pkgs.mkcert
       pkgs.uv
+      pkgs.git-cliff
+      pkgs.nixfmt
+      pkgs.yq
     ];
 
     # https://github.com/nix-community/home-manager/issues/761
