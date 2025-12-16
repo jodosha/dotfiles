@@ -28,6 +28,7 @@
       pkgs.devenv
       pkgs.nodejs_22
       pkgs.claude-code
+      pkgs.codex
       pkgs.mkcert
       pkgs.uv
       pkgs.git-cliff
