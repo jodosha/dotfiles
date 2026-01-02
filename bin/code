@@ -4,16 +4,12 @@ name=$1
 dir="$HOME/Code/$name"
 cd "$dir" || exit 1
 
-tmux source-file "$HOME/.config/tmux/tmux.conf"
-
 if ! tmux has-session -t "=$name" 2>/dev/null; then
-  tmux start                 \;\
+  tmux start-server          \;\
     set -g remain-on-exit on \;\
     new-session -d -s "$name"
 
-  if [[ -f "$HOME/.tmux/profiles/$name.tmuxrc" ]]; then
-    tmux source-file "$HOME/.tmux/profiles/$name.tmuxrc"
-  elif [[ -f ".tmuxrc" ]]; then
+  if [[ -f ".tmuxrc" ]]; then
     tmux source-file ".tmuxrc"
   elif [[ -f "$HOME/.tmuxrc" ]]; then
     tmux source-file "$HOME/.tmuxrc"
