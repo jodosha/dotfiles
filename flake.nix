@@ -89,6 +89,18 @@
 
       # For Home Manager
       users.users.jodosha.home = "/Users/jodosha";
+
+      # DNS
+      services.dnsmasq = {
+        enable = true;
+        addresses = {
+          dxup = "127.0.0.1";
+        };
+        servers = [
+          "192.168.1.1"
+          "1.1.1.1"
+        ];
+      };
     };
   in
   {
