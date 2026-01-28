@@ -34,6 +34,7 @@
       pkgs.git-cliff
       pkgs.nixfmt
       pkgs.yq
+      pkgs.github-copilot-cli
     ];
 
     # https://github.com/nix-community/home-manager/issues/761
@@ -135,7 +136,6 @@
     settings.editor = "nvim";
     extensions = [
       pkgs.gh-dash
-      pkgs.gh-copilot
     ];
   };
 
