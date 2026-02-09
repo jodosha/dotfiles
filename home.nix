@@ -72,8 +72,8 @@
       nix-remote-builder="nix run nixpkgs#darwin.linux-builder";
 
       # Git
-      gp="git push origin $(current_branch)";
-      gpb="git push -u origin $(current_branch)";
+      gp="git push origin $(git_current_branch)";
+      gpb="git push -u origin $(git_current_branch)";
       gs="git status";
       gaa="git add --all";
       gc="git commit";
