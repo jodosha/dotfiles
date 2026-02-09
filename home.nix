@@ -35,6 +35,12 @@
       pkgs.nixfmt
       pkgs.yq
       pkgs.github-copilot-cli
+      pkgs.cargo              # needed to install tree-sitter-cli >= 0.26.1
+      pkgs.lazygit            # git TUI for snacks.lazygit + astronvim
+      pkgs.fd                 # fast file finder for snacks.picker
+      pkgs.gdu                # disk usage analyzer for astronvim
+      pkgs.bottom             # system monitor (btm) for astronvim
+      pkgs.wget               # alternative downloader for mason
     ];
 
     # https://github.com/nix-community/home-manager/issues/761
@@ -56,6 +62,7 @@
 
     sessionPath = [
       "$HOME/.local/bin"
+      "$HOME/.cargo/bin"
     ];
   };
 
