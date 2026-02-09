@@ -11,7 +11,6 @@
     packages = [
       pkgs.binutils
       pkgs.gnupg
-      pkgs.oh-my-zsh
       pkgs.xz
       pkgs.tree
       pkgs.squashfsTools
@@ -43,8 +42,6 @@
       pkgs.wget               # alternative downloader for mason
     ];
 
-    # https://github.com/nix-community/home-manager/issues/761
-    file.".cache/oh-my-zsh/themes/jodosha.zsh-theme".source = ./misc/omz.zsh-theme;
     file.".ssh/config".source = ./misc/ssh;
     file.".config/ghostty/config".source = ./misc/ghostty;
     file.".tmuxrc".source = ./misc/tmuxrc;
@@ -75,7 +72,17 @@
 
   programs.zsh = {
     enable = true;
-    autosuggestion.enable = true;
+    antidote = {
+      enable = true;
+      plugins = [
+        "zsh-users/zsh-autosuggestions"
+        "zsh-users/zsh-completions"
+        "zsh-users/zsh-syntax-highlighting"
+      ];
+    };
+    localVariables = {
+      PS1 = "%(?.%F{green}❯%f.%F{red}❯%f) ";
+    };
     shellAliases = {
       ll = "ls -l";
       dnsflush="dscacheutil -flushcache";
@@ -99,16 +106,6 @@
       # Ruby
       be="bundle exec";
       ber="bundle exec rake";
-    };
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "git-flow"
-      ];
-      custom = "$HOME/.cache/oh-my-zsh/";
-      theme = "jodosha";
     };
   };
 
