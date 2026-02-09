@@ -54,6 +54,11 @@
       recursive = true;
     };
 
+    file.".config/nvim" = {
+      source = ./nvim;
+      recursive = true;
+    };
+
     sessionVariables = {
       TERM = "xterm-256color";
       EDITOR = "nvim";
