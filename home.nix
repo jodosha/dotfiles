@@ -83,6 +83,11 @@
     localVariables = {
       PS1 = "%(?.%F{green}❯%f.%F{red}❯%f) ";
     };
+    initContent = ''
+      function git_current_branch() {
+        git rev-parse --abbrev-ref HEAD
+      }
+    '';
     shellAliases = {
       ll = "ls -l";
       dnsflush="dscacheutil -flushcache";
@@ -91,17 +96,21 @@
       nix-remote-builder="nix run nixpkgs#darwin.linux-builder";
 
       # Git
+      ga="git add";
+      gb="git branch";
+      gco="git checkout";
       gp="git push origin $(git_current_branch)";
       gpb="git push -u origin $(git_current_branch)";
       gs="git status";
       gaa="git add --all";
-      gc="git commit";
+      gc="git commit --verbose";
       gca="git commit --amend --date=\"$(date)\"";
       wip="gaa && gca -m 'WIP'";
       gsh="git show HEAD";
       gd="git diff";
       grev="git diff master";
-      ggpull="git pull --rebase";
+      ggpull="git pull --rebase origin $(git_current_branch)";
+      glo="git log --oneline --decorate";
 
       # Ruby
       be="bundle exec";
