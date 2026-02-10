@@ -87,6 +87,10 @@
       function git_current_branch() {
         git rev-parse --abbrev-ref HEAD
       }
+
+      function git_main_branch() {
+        git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|origin/||'
+      }
     '';
     shellAliases = {
       ll = "ls -l";
@@ -111,6 +115,7 @@
       grev="git diff master";
       ggpull="git pull --rebase origin $(git_current_branch)";
       glo="git log --oneline --decorate";
+      gcm="git checkout $(git_main_branch)";
 
       # Ruby
       be="bundle exec";
