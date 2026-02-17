@@ -40,6 +40,15 @@
       pkgs.gdu                # disk usage analyzer for astronvim
       pkgs.bottom             # system monitor (btm) for astronvim
       pkgs.wget               # alternative downloader for mason
+      pkgs.shellcheck         # shell script linter for claude-code
+      pkgs.difftastic         # structural, language-aware diffs for claude-code
+      pkgs.tokei              # codebase composition stats for claude-code
+      pkgs.ast-grep           # structural code search/refactoring for claude-code
+      pkgs.hyperfine          # statistical benchmarking for claude-code
+      pkgs.typos              # source code spell checker for claude-code
+      pkgs.watchexec          # file watcher for claude-code
+      pkgs.bat                # syntax-highlighted file viewing for claude-code
+      pkgs.delta              # enhanced git diffs for claude-code
     ];
 
     file.".ssh/config".source = ./misc/ssh;
@@ -209,6 +218,12 @@
       set -g status-right-length 90
       set -g status-justify centre
       set -g status-position top
+
+      # Prevents jumping to bottom on mouse release
+      unbind -T copy-mode-vi MouseDragEnd1Pane
+
+      # Copy to macOS clipboard without clearing the selection or jumping
+      bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-no-clear "pbcopy"
     '';
   };
 }
