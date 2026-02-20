@@ -49,6 +49,8 @@
       pkgs.watchexec          # file watcher for claude-code
       pkgs.bat                # syntax-highlighted file viewing for claude-code
       pkgs.delta              # enhanced git diffs for claude-code
+      pkgs.scc                # codebase composition stats for claude-code
+      pkgs.difftastic         # structural, language-aware diffs for claude-code
     ];
 
     file.".ssh/config".source = ./misc/ssh;
@@ -224,6 +226,9 @@
 
       # Copy to macOS clipboard without clearing the selection or jumping
       bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-no-clear "pbcopy"
+
+      # Clear screen (preserving scrollback history) via Cmd+k
+      bind-key K send-keys C-l
     '';
   };
 }
