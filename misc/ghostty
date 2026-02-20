@@ -9,3 +9,4 @@ macos-titlebar-style = transparent
 window-colorspace = "display-p3"
 macos-titlebar-proxy-icon = hidden
 title = " "
+keybind = cmd+k=text:\x06K
