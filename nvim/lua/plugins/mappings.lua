@@ -7,6 +7,10 @@ return {
         n = {
           ["<Leader>bn"] = { ":bnext<cr>", desc = "Next buffer" },
           ["<Leader>bp"] = { ":bprev<cr>", desc = "Previous buffer" },
+          ["<Leader>bcp"] = {
+            function() vim.fn.setreg("+", vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.")) end,
+            desc = "Copy relative path",
+          },
           ["<Leader>rs"] = { ":TermExec cmd='bundle exec rspec %' direction='float'<cr>", desc = "RSpec file" },
           ["<Leader>rsl"] = {
             function()
