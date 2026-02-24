@@ -21,6 +21,7 @@
       pkgs.neovim
       pkgs.ripgrep
       pkgs.luarocks
+      pkgs.lua-language-server  # Lua LSP for NeoVim (lua_ls)
       pkgs.nerd-fonts.hack
       pkgs._1password-cli
       pkgs.tmux
