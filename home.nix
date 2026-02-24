@@ -102,9 +102,75 @@
       function git_main_branch() {
         git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|origin/||'
       }
+
+      function gnotify () {
+        local title="''${1:-Done}"
+        local body="''${2:-}"
+        if [ -n "$TMUX" ]; then
+          printf '\033Ptmux;\033\033]777;notify;%s;%s\007\033\\' "$title" "$body"
+        else
+          printf '\033]777;notify;%s;%s\007' "$title" "$body"
+        fi
+      }
+
+      function notifyrun () {
+        local label="$1"; shift
+        "$@"
+        local ec=$?
+        gnotify "$label" "done (exit=$ec)"
+        return $ec
+      }
+
+      function bnotifyrun () {
+        local label="$1"; shift
+        ("$@"; gnotify "$label" "done (exit=$?)") &
+        disown
+      }
+
+      function watchpr () {
+        local pr_number
+        pr_number=$(gh pr view --json number -q '.number' 2>/dev/null)
+        if [ -z "$pr_number" ]; then
+          echo "No PR found for the current branch"
+          return 1
+        fi
+
+        local repo
+        repo=$(gh repo view --json nameWithOwner -q '.nameWithOwner' 2>/dev/null)
+        local label="''${repo}#''${pr_number}"
+
+        bnotifyrun "$label" _watchpr_poll "$pr_number"
+        echo "Watching checks for $label in background"
+      }
+
+      function _watchpr_poll () {
+        local pr_number="$1"
+        while true; do
+          local output
+          output=$(gh pr checks "$pr_number" --json=bucket,state 2>/dev/null)
+
+          local pending
+          pending=$(echo "$output" | jq '[.[] | select(.state != "SUCCESS" and .state != "NEUTRAL" and .state != "SKIPPED")] | length')
+
+          if [ "$pending" = "0" ]; then
+            return 0
+          fi
+
+          local failed
+          failed=$(echo "$output" | jq '[.[] | select(.state == "FAILURE" or .state == "ERROR" or .state == "CANCELLED")] | length')
+
+          if [ "$failed" != "0" ]; then
+            return 1
+          fi
+
+          sleep 60
+        done
+      }
     '';
     shellAliases = {
       ll = "ls -l";
+      nr = "notifyrun";
+      bnr = "bnotifyrun";
       dnsflush="dscacheutil -flushcache";
       rebuild="sudo darwin-rebuild switch";
       nix-upgrade="nix flake update && sudo darwin-rebuild switch --flake";
@@ -226,6 +292,9 @@
 
       # Copy to macOS clipboard without clearing the selection or jumping
       bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-no-clear "pbcopy"
+
+      # Allow escape sequences (e.g. OSC 777 notifications) to pass through to Ghostty
+      set -g allow-passthrough on
 
       # Clear screen (preserving scrollback history) via Cmd+k
       bind-key K send-keys C-l
