@@ -1,7 +1,7 @@
 term = "xterm-256color"
 theme = tokyonight
 font-family = "Hack Nerd Font Propo"
-font-size = 14
+font-size = 16
 font-thicken = true
 background-opacity = 0.9
 background-blur = 10
