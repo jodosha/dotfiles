@@ -290,12 +290,6 @@
       set -g status-justify centre
       set -g status-position top
 
-      # Prevents jumping to bottom on mouse release
-      unbind -T copy-mode-vi MouseDragEnd1Pane
-
-      # Copy to macOS clipboard without clearing the selection or jumping
-      bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-no-clear "pbcopy"
-
       # Allow escape sequences (e.g. OSC 777 notifications) to pass through to Ghostty
       set -g allow-passthrough on
 
