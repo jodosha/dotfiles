@@ -177,6 +177,7 @@
       rebuild="sudo darwin-rebuild switch";
       nix-upgrade="nix flake update && sudo darwin-rebuild switch --flake";
       nix-remote-builder="nix run nixpkgs#darwin.linux-builder";
+      nix-gc="nix-collect-garbage -d";
 
       # Git
       ga="git add";
