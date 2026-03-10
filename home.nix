@@ -25,7 +25,6 @@
       pkgs.nerd-fonts.hack
       pkgs._1password-cli
       pkgs.tmux
-      pkgs.devenv
       pkgs.nodejs_22
       pkgs.claude-code
       pkgs.codex
@@ -227,7 +226,6 @@
     };
 
     ignores = [
-      "*devenv*"
       ".direnv"
       ".claude"
       ".pre-commit-config.yaml"
