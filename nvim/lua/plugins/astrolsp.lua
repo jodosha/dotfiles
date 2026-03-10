@@ -328,6 +328,28 @@ return {
           end,
         },
       },
+      go_organize_imports = {
+        cond = "textDocument/codeAction",
+        {
+          event = "BufWritePre",
+          desc = "Organize Go imports on save",
+          callback = function(args)
+            if vim.bo[args.buf].filetype ~= "go" then return end
+            local params = vim.lsp.util.make_range_params(0, "utf-16")
+            params.context = { only = { "source.organizeImports" }, diagnostics = {} }
+            local result = vim.lsp.buf_request_sync(args.buf, "textDocument/codeAction", params, 3000)
+            for _, res in pairs(result or {}) do
+              for _, action in pairs(res.result or {}) do
+                if action.edit then
+                  vim.lsp.util.apply_workspace_edit(action.edit, "utf-16")
+                elseif action.command then
+                  vim.lsp.buf.execute_command(action.command)
+                end
+              end
+            end
+          end,
+        },
+      },
       -- Auto-detect LSP servers when entering directories (useful for Nix dev shells)
       lsp_server_detection = {
         {

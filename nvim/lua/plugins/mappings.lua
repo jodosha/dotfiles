@@ -11,6 +11,7 @@ return {
             function() vim.fn.setreg("+", vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.")) end,
             desc = "Copy relative path",
           },
+          ["<Leader>eg"] = { ":Neotree source=git_status reveal=true<cr>", desc = "Show Neo-Tree Git status" },
           ["<Leader>rs"] = { ":TermExec cmd='bundle exec rspec %' direction='float'<cr>", desc = "RSpec file" },
           ["<Leader>rsl"] = {
             function()
@@ -19,11 +20,6 @@ return {
             end,
             desc = "RSpec line",
           },
-          ["<C-a>"] = { "<cmd>CodeCompanionActions<cr>", desc = "Code Companion Actions" },
-          ["<LocalLeader>a"] = { "<cmd>CodeCompanionChat Toggle<cr>", desc = "Code Companion Chat" },
-        },
-        v = {
-          ["ga"] = { "<cmd>CodeCompanionChat Add<cr>", desc = "Code Companion Add" },
         },
       },
     },

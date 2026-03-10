@@ -8,6 +8,10 @@ return {
       "yaml",   -- codecompanion, render-markdown
       "html",   -- render-markdown
       "regex",  -- snacks.picker
+      "go",
+      "gomod",
+      "gosum",
+      "gowork",
     },
   },
 }
