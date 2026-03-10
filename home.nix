@@ -44,7 +44,7 @@
       pkgs.shellcheck         # shell script linter for claude-code
       pkgs.difftastic         # structural, language-aware diffs for claude-code
       pkgs.tokei              # codebase composition stats for claude-code
-      pkgs.ast-grep           # structural code search/refactoring for claude-code
+      # pkgs.ast-grep           # structural code search/refactoring for claude-code
       pkgs.hyperfine          # statistical benchmarking for claude-code
       pkgs.typos              # source code spell checker for claude-code
       pkgs.watchexec          # file watcher for claude-code
