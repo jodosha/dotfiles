@@ -34,6 +34,7 @@
       pkgs.git-cliff
       pkgs.nixfmt
       pkgs.yq
+      pkgs.graphviz
       pkgs.github-copilot-cli
       pkgs.cargo              # needed to install tree-sitter-cli >= 0.26.1
       pkgs.lazygit            # git TUI for snacks.lazygit + astronvim
