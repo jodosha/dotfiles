@@ -15,16 +15,16 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nixpkgs-master, home-manager }:
   let
-    pkgs-master = import nixpkgs-master {
-      system = "aarch64-darwin";
-      config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs-master.lib.getName pkg) [
-        "claude-code"
-      ];
-    };
-
-    claude-code-overlay = final: prev: {
-      claude-code = pkgs-master.claude-code;
-    };
+    # pkgs-master = import nixpkgs-master {
+    #   system = "aarch64-darwin";
+    #   config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs-master.lib.getName pkg) [
+    #     "claude-code"
+    #   ];
+    # };
+    #
+    # claude-code-overlay = final: prev: {
+    #   claude-code = pkgs-master.claude-code;
+    # };
 
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -120,7 +120,7 @@
     # $ darwin-rebuild build --flake .#kamado
     darwinConfigurations."kamado" = nix-darwin.lib.darwinSystem {
       modules = [
-        { nixpkgs.overlays = [ claude-code-overlay ]; }
+        # { nixpkgs.overlays = [ claude-code-overlay ]; }
         configuration
 	      home-manager.darwinModules.home-manager {
 	        home-manager.useGlobalPkgs = true;
