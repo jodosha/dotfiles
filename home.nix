@@ -72,11 +72,13 @@
       TERM = "xterm-256color";
       EDITOR = "nvim";
       VISUAL = "nvim";
+      NPM_CONFIG_PREFIX = "$HOME/.npm-global";
     };
 
     sessionPath = [
       "$HOME/.local/bin"
       "$HOME/.cargo/bin"
+      "$HOME/.npm-global/bin"
     ];
   };
 
