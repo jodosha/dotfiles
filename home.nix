@@ -94,10 +94,16 @@
         "zsh-users/zsh-syntax-highlighting"
       ];
     };
-    localVariables = {
-      PS1 = "%(?.%F{green}❯%f.%F{red}❯%f) ";
-    };
+    localVariables = {};
     initContent = ''
+      setopt PROMPT_SUBST
+
+      PS1='$(_dxup_indicator)%(?.%F{green}❯%f.%F{red}❯%f) '
+
+      function _dxup_indicator() {
+        [[ "''${DXUP_DEVELOP}" == "1" ]] && print -n "%F{magenta}⚡%f"
+      }
+
       function git_current_branch() {
         git rev-parse --abbrev-ref HEAD
       }
