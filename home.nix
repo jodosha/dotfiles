@@ -13,7 +13,6 @@
       pkgs.gnupg
       pkgs.xz
       pkgs.tree
-      pkgs.squashfsTools
       pkgs.git
       pkgs.gh
       pkgs.bc
