@@ -53,6 +53,7 @@
       pkgs.delta              # enhanced git diffs for claude-code
       pkgs.scc                # codebase composition stats for claude-code
       pkgs.difftastic         # structural, language-aware diffs for claude-code
+      pkgs.python3
     ];
 
     file.".ssh/config".source = ./misc/ssh;
