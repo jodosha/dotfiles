@@ -25,7 +25,9 @@
       pkgs._1password-cli
       pkgs.tmux
       pkgs.nodejs_22
+      pkgs.bun
       pkgs.claude-code
+      pkgs.codex
       pkgs.codex
       pkgs.mkcert
       pkgs.uv
