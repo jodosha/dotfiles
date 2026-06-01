@@ -86,17 +86,16 @@
 
   programs.home-manager.enable = true;
 
+
   programs.zsh = {
     enable = true;
-    antidote = {
-      enable = true;
-      plugins = [
-        "zsh-users/zsh-autosuggestions"
-        "zsh-users/zsh-completions"
-        "zsh-users/zsh-syntax-highlighting"
-      ];
-    };
-    localVariables = {};
+
+    # NOTE: This causes `dxup develop` to hang
+    # enableCompletion = true;
+
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
     initContent = ''
       setopt PROMPT_SUBST
 
