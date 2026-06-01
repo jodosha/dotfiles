@@ -1,10 +1,33 @@
 #!/bin/bash
 
-name=$1
+duration="60m"
+name=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --duration)    duration="$2"; shift 2 ;;
+    --duration=*)  duration="${1#*=}"; shift ;;
+    -h|--help)
+      echo "Usage: code [--duration DURATION] <name>"
+      echo "  --duration  Timebox duration (e.g. 60m, 1h30m). 0 disables. Default: 60m."
+      exit 0 ;;
+    --) shift; name="$1"; break ;;
+    -*) echo "code: unknown flag: $1" >&2; exit 2 ;;
+    *)  name="$1"; shift ;;
+  esac
+done
+
+if [[ -z "$name" ]]; then
+  echo "Usage: code [--duration DURATION] <name>" >&2
+  exit 2
+fi
+
 dir="$HOME/Code/$name"
 cd "$dir" || exit 1
 
+new_session=0
 if ! tmux has-session -t "=$name" 2>/dev/null; then
+  new_session=1
   tmux start-server          \;\
     set -g remain-on-exit on \;\
     new-session -d -s "$name"
@@ -16,8 +39,17 @@ if ! tmux has-session -t "=$name" 2>/dev/null; then
   fi
 fi
 
+# Graceful teardown: Ctrl-C every pane (interrupts neovim/claude/tail/etc), then kill the session.
+on_exit_cmd="tmux list-panes -s -t \"=$name\" -F '#{pane_id}' 2>/dev/null | while read pane; do tmux send-keys -t \"\$pane\" C-c 2>/dev/null; done; sleep 2; tmux kill-session -t \"=$name\" 2>/dev/null"
+
 if [[ -n "$TMUX" ]]; then
   tmux switch-client -t "=$name"
+elif (( new_session )) && [[ "$duration" != "0" ]] && command -v timebox >/dev/null 2>&1; then
+  exec timebox \
+    --duration "$duration" \
+    --label "code $name" \
+    --on-exit "$on_exit_cmd" \
+    -- tmux attach -t "=$name"
 else
   tmux attach -t "=$name"
 fi
