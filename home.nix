@@ -232,6 +232,7 @@
         format = "ssh";
       };
       signing = {
+        format = "ssh";
         signByDefault = true;
         key = "/Users/jodosha/.ssh/github";
       };
