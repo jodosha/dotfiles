@@ -209,6 +209,8 @@
       # Ruby
       be="bundle exec";
       ber="bundle exec rake";
+
+      claude-lean="claude --strict-mcp-config --mcp-config ~/.claude/profiles/no-mcp.json --settings ~/.claude/profiles/lean.json";
     };
   };
 
