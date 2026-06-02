@@ -2,14 +2,18 @@
 
 duration="60m"
 name=""
+kill=0
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --duration)    duration="$2"; shift 2 ;;
     --duration=*)  duration="${1#*=}"; shift ;;
+    --kill)        kill=1; shift ;;
     -h|--help)
-      echo "Usage: code [--duration DURATION] <name>"
+      echo "Usage: code [--duration DURATION] [--kill] <name>"
       echo "  --duration  Timebox duration (e.g. 60m, 1h30m). 0 disables. Default: 60m."
+      echo "  --kill      On timebox expiry, interrupt every pane and kill the session."
+      echo "              Default: detach only, leaving the session and its processes running."
       exit 0 ;;
     --) shift; name="$1"; break ;;
     -*) echo "code: unknown flag: $1" >&2; exit 2 ;;
@@ -18,7 +22,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "$name" ]]; then
-  echo "Usage: code [--duration DURATION] <name>" >&2
+  echo "Usage: code [--duration DURATION] [--kill] <name>" >&2
   exit 2
 fi
 
@@ -39,8 +43,13 @@ if ! tmux has-session -t "=$name" 2>/dev/null; then
   fi
 fi
 
-# Graceful teardown: Ctrl-C every pane (interrupts neovim/claude/tail/etc), then kill the session.
-on_exit_cmd="tmux list-panes -s -t \"=$name\" -F '#{pane_id}' 2>/dev/null | while read pane; do tmux send-keys -t \"\$pane\" C-c 2>/dev/null; done; sleep 2; tmux kill-session -t \"=$name\" 2>/dev/null"
+# On timebox expiry:
+#   default (--kill not given): detach only, leaving the session and its processes running.
+#   --kill: graceful teardown — Ctrl-C every pane (interrupts neovim/claude/tail/etc), then kill the session.
+on_exit_cmd="tmux detach-client -s \"=$name\" 2>/dev/null"
+if (( kill )); then
+  on_exit_cmd="tmux list-panes -s -t \"=$name\" -F '#{pane_id}' 2>/dev/null | while read pane; do tmux send-keys -t \"\$pane\" C-c 2>/dev/null; done; sleep 2; tmux kill-session -t \"=$name\" 2>/dev/null"
+fi
 
 if [[ -n "$TMUX" ]]; then
   tmux switch-client -t "=$name"
