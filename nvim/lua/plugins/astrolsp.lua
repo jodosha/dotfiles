@@ -398,7 +398,7 @@ return {
             end
 
             -- Restart LSP clients for current buffer
-            vim.cmd("LspRestart")
+            vim.cmd("lsp restart")
           end,
           desc = "Refresh and restart LSP servers",
         },
@@ -446,7 +446,7 @@ return {
       end
 
       -- Restart LSP clients for all buffers
-      vim.cmd("LspRestart")
+      vim.cmd("lsp restart")
     end, {
       desc = "Refresh available LSP servers and restart clients",
       bang = true
