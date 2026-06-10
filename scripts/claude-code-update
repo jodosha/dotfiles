@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# claude-code-update — pin the latest Claude Code release for Nix.
+#
+# Fetches Anthropic's release manifest and writes it to pins/claude-code.json.
+# The Nix overlay reads that file for the version and per-platform binary
+# checksum. This only updates the pin; run a rebuild afterwards to install it.
+#
+# nixpkgs-unstable lags behind official Claude Code releases; this closes the
+# gap without depending on a third-party flake.
+
+set -euo pipefail
+
+base="https://downloads.claude.ai/claude-code-releases"
+repo="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+pin="$repo/pins/claude-code.json"
+
+case "${1:-}" in
+  -h|--help)
+    echo "Usage: scripts/claude-code-update"
+    echo "  Pins the latest Claude Code release to pins/claude-code.json."
+    echo "  Run a rebuild afterwards to install it."
+    exit 0 ;;
+  "") ;;
+  *) echo "claude-code-update: unknown argument: $1" >&2; exit 2 ;;
+esac
+
+current="$(jq -r '.version // "none"' "$pin" 2>/dev/null || echo none)"
+latest="$(curl -fsSL "$base/latest")"
+
+if [[ "$latest" == "$current" ]]; then
+  echo "claude-code already pinned to latest: $latest"
+  exit 0
+fi
+
+# The release manifest is shaped exactly as the overlay expects:
+# { version, platforms.<key>.checksum }. Save it verbatim.
+curl -fsSL "$base/$latest/manifest.json" | jq . > "$pin"
+
+echo "claude-code: $current -> $latest (pinned in pins/claude-code.json)"
+echo "Run a rebuild to install it."

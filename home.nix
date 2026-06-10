@@ -28,7 +28,7 @@
       pkgs.bun
       pkgs.claude-code
       pkgs.codex
-      pkgs.codex
+      pkgs.llama-cpp
       pkgs.mkcert
       pkgs.uv
       pkgs.git-cliff

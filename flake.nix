@@ -15,16 +15,25 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
-    # pkgs-master = import nixpkgs-master {
-    #   system = "aarch64-darwin";
-    #   config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs-master.lib.getName pkg) [
-    #     "claude-code"
-    #   ];
-    # };
-    #
-    # claude-code-overlay = final: prev: {
-    #   claude-code = pkgs-master.claude-code;
-    # };
+    # Track Claude Code releases ahead of nixpkgs-unstable, which lags behind.
+    # ./pins/claude-code.json is Anthropic's release manifest (version + the
+    # per-platform binary checksum); refresh it with `claude-code-update`.
+    # We reuse nixpkgs' own derivation and just repoint it at the pinned binary,
+    # so all the wrapping (auto-updater disabled, ripgrep, etc.) still applies.
+    claude-code-overlay = final: prev:
+      let
+        pin = builtins.fromJSON (builtins.readFile ./pins/claude-code.json);
+        node = prev.stdenv.hostPlatform.node;
+        platformKey = "${node.platform}-${node.arch}";
+      in {
+        claude-code = prev.claude-code.overrideAttrs (_: {
+          version = pin.version;
+          src = prev.fetchurl {
+            url = "https://downloads.claude.ai/claude-code-releases/${pin.version}/${platformKey}/claude";
+            sha256 = pin.platforms.${platformKey}.checksum;
+          };
+        });
+      };
 
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -108,7 +117,7 @@
     # $ darwin-rebuild build --flake .#kamado
     darwinConfigurations."kamado" = nix-darwin.lib.darwinSystem {
       modules = [
-        # { nixpkgs.overlays = [ claude-code-overlay ]; }
+        { nixpkgs.overlays = [ claude-code-overlay ]; }
         configuration
 	      home-manager.darwinModules.home-manager {
 	        home-manager.useGlobalPkgs = true;
